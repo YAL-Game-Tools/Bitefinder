@@ -1,0 +1,42 @@
+import haxe.Json;
+import js.Browser;
+import columns.*;
+import table.*;
+
+class AttackTable extends Table<Attack> {
+	override function initColumns() {
+		columns.push(new LinkColumn("Ancestry", (a:Attack) -> a.ancestry));
+		columns.push(new LinkColumn("Heritage", (a:Attack) -> a.heritage));
+		columns.push(new MultiLinkColumn("Feats", (a:Attack) -> a.feats));
+		//
+		columns.push(new NameColumn("Attack"));
+		var dieSize = new NumberColumn("Die", (a:Attack) -> a.dieSize);
+		dieSize.filterName = "Die Size";
+		dieSize.prefix = "d";
+		columns.push(dieSize);
+		columns.push(new MultiLinkColumn("Type", (a:Attack) -> a.damageTypes));
+		columns.push(new MultiLinkColumn("Traits", (a:Attack) -> a.traits));
+	}
+	static final lsKey = "yal.pf2e.bite.filters";
+	override function afterBuild() {
+		try {
+			var text = Browser.window.localStorage.getItem(lsKey);
+			if (text != null && text != "") {
+				var array = Json.parse(text);
+				loadFilters(array);
+			}
+		} catch (_:Dynamic) {
+			
+		}
+		super.afterBuild();
+		autoSave = true;
+	}
+	var autoSave = false;
+	override function updateFilters() {
+		super.updateFilters();
+		if (autoSave) {
+			var filters = saveFilters();
+			Browser.window.localStorage.setItem(lsKey, Json.stringify(filters));
+		}
+	}
+}

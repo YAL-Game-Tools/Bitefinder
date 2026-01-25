@@ -1,0 +1,87 @@
+| Rarity | Ancestry | Attack | Damage | Traits | Requirements |
+|     -: |       -: |     -: | :-     | :-     | :-           |
+| Common | Goblin | Jaws | 1d6ʺP | Finesse | [Razortooth](https://2e.aonprd.com/Heritages.aspx?ID=252)ᴴ
+| Common | Goblin | Jaws | 1d8ʺP | - | [Razortooth](https://2e.aonprd.com/Heritages.aspx?ID=252)ᴴ + [Fang Sharpener](https://2e.aonprd.com/Feats.aspx?ID=1000)¹
+| Common | Goblin | Jaws | 1d4ʺP | - | [Irongut](https://2e.aonprd.com/Heritages.aspx?ID=17)ᴴ + [Fang Sharpener](https://2e.aonprd.com/Feats.aspx?ID=1000)¹
+| Common | Goblin | Tail | 1d6ʺB | Trip | [Tailed Goblin](https://2e.aonprd.com/Heritages.aspx?ID=37)ᴴ + [Hard Tail](https://2e.aonprd.com/Feats.aspx?ID=1001)¹
+| Common | Orc | Tusk | 1d6ʺP | Finesse | [Tusks](https://2e.aonprd.com/Feats.aspx?ID=4519)¹
+| Common | Leshy | Nectar | 1d4ʺAcid | Ranged 20ft | [Caustic Nectar](https://2e.aonprd.com/Feats.aspx?ID=7612)¹
+| Common | Leshy | Seedpod | 1d4ʺB | Ranged 30ft | [Seedpod](https://2e.aonprd.com/Feats.aspx?ID=4497)¹
+| Common | Leshy | Spine | 1d6ʺP | Finesse | [Cactus](https://2e.aonprd.com/Heritages.aspx?ID=263)ᴴ
+| Uncommon | Athamaru | Quills | 1d6ʺP | Agile, Finesse | [Quilled](https://2e.aonprd.com/Heritages.aspx?ID=287)ᴴ
+| Uncommon | Catfolk | Teeth | 1d6ʺP | - | [Saber Teeth](https://2e.aonprd.com/Feats.aspx?ID=5548)¹
+| Uncommon | Catfolk | Claw | 1d6ʺS | Agile, Finesse | [Clawed](https://2e.aonprd.com/Heritages.aspx?ID=313)ᴴ
+| Uncommon | Centaur | Hoof | 1d6ʺB | Finesse | [Ironhoof](https://2e.aonprd.com/Heritages.aspx?ID=294)ᴴ
+| Uncommon | Centaur | Hoof | 1d8ʺB | Finesse | [Ironhoof](https://2e.aonprd.com/Heritages.aspx?ID=294)ᴴ + [Steelhoof](https://2e.aonprd.com/Feats.aspx?ID=5326)¹
+| Uncommon | Kitsune | Claw | 1d4ʺS | Agile, Finesse | [Retractable Claws](https://2e.aonprd.com/Feats.aspx?ID=2620)¹
+| Uncommon | Kitsune | Jaws | 1d6ʺP | Finesse | [Earthly Wilds](https://2e.aonprd.com/Heritages.aspx?ID=137)
+| Uncommon | Lizardfolk | Claw | 1d4ʺS | Agile, Finesse | -
+| Uncommon | Lizardfolk | Claw | 1d6ʺS / 1d6ʺP | Agile, Finesse | [Iruxi Armaments](https://2e.aonprd.com/Feats.aspx?ID=5633)¹
+| Uncommon | Lizardfolk | Fangs | 1d8ʺP | - | [Iruxi Armaments](https://2e.aonprd.com/Feats.aspx?ID=5633)¹
+| Uncommon | Lizardfolk | Tail | 1d6ʺB | Sweep | [Iruxi Armaments](https://2e.aonprd.com/Feats.aspx?ID=5633)¹
+| Uncommon | Kholo | Jaws | 1d6ʺP | - | -
+| Uncommon | Kholo | Jaws | 1d8ʺP | Grapple | [Crunch](https://2e.aonprd.com/Feats.aspx?ID=5590)¹
+| Uncommon | Kobold | Jaws | 1d6ʺP | Finesse | [Strongjaw](https://2e.aonprd.com/Heritages.aspx?ID=337)ᴴ
+| Uncommon | Merfolk | Jaws | 1d8ʺP | - | [Abyssal](https://2e.aonprd.com/Heritages.aspx?ID=298)ᴴ + [Ocean's Bite](https://2e.aonprd.com/Feats.aspx?ID=5345)¹
+| Uncommon | Merfolk | Jaws | 1d8ʺP | - | [Carcharodon](https://2e.aonprd.com/Heritages.aspx?ID=299)ᴴ + [Ocean's Bite](https://2e.aonprd.com/Feats.aspx?ID=5345)¹
+| Uncommon | Minotaur | Horn | 1d8ʺP | - | -
+| Uncommon | Minotaur | Horn | 1d6ʺP | Agile | [Littlehorn](https://2e.aonprd.com/Heritages.aspx?ID=305)ᴴ
+| Uncommon | Nagaji | Fangs | 1d6ʺP | Finesse | 
+| Uncommon | Nagaji | Tail | 1d6ʺB | Finesse | [Sacred Nagaji](https://2e.aonprd.com/Heritages.aspx?ID=217)ᴴ
+| Uncommon | Skeleton | Claw | 1d6ʺS | Finesse | [Monstrous](https://2e.aonprd.com/Heritages.aspx?ID=202)ᴴ
+| Uncommon | Skeleton | Horn | 1d6ʺP | Finesse | [Monstrous](https://2e.aonprd.com/Heritages.aspx?ID=202)ᴴ
+| Uncommon | Skeleton | Tail | 1d6ʺB | Finesse | [Monstrous](https://2e.aonprd.com/Heritages.aspx?ID=202)ᴴ
+| Uncommon | Tanuki | Belly | 1d6ʺB | Forceful | [Iron Belly](https://2e.aonprd.com/Feats.aspx?ID=6931)¹
+| Uncommon | Tengu | Beak | 1d6ʺP | Finesse |
+| Uncommon | Tengu | Beak | 1d6ʺP | Deadly D8 | [Dogtooth](https://2e.aonprd.com/Heritages.aspx?ID=354)ᴴ
+| Uncommon | Tengu | Claw | 1d4ʺS | Agile, Finesse | [Taloned](https://2e.aonprd.com/Heritages.aspx?ID=359)ᴴ
+| Uncommon | Ratfolk | Jaws | 1d4ʺP | Agile, Finesse | -
+| Uncommon | Ratfolk | Jaws | 1d6ʺP | Agile, Finesse, Backstabber | [Vicious Incissors](https://2e.aonprd.com/Feats.aspx?ID=5657)¹
+| Uncommon | Vanara | Jaws | 1d6ʺP | Finesse | [Lahkgyan](https://2e.aonprd.com/Heritages.aspx?ID=222)ᴴ
+| Rare | Anadi | Fangs | 1d6ʺP | Finesse | (spider form only)
+| Rare | Automaton | Claw | 1d4ʺS | Agile, Finesse | [Armament](https://2e.aonprd.com/Feats.aspx?ID=3090)¹
+| Rare | Automaton | Pincer | 1d6ʺP | Grapple | [Armament](https://2e.aonprd.com/Feats.aspx?ID=3090)¹
+| Rare | Automaton | Claw | 1d6ʺS | Agile, Finesse | [AA](https://2e.aonprd.com/Feats.aspx?ID=3090)¹ + [Augmentation](https://2e.aonprd.com/Feats.aspx?ID=3103)⁹
+| Rare | Automaton | Pincer | 1d8ʺP | Grapple | [AA](https://2e.aonprd.com/Feats.aspx?ID=3090)¹ + [Augmentation](https://2e.aonprd.com/Feats.aspx?ID=3103)⁹
+| Rare | A. Animal | Antler | 1d6ʺP | Finesse
+| Rare | A. Animal | Beak | 1d6ʺP | Finesse
+| Rare | A. Animal | Claw | 1d4ʺS | Agile, finesse
+| Rare | A. Animal | Fangs | 1d6ʺP | Finesse
+| Rare | A. Animal | Fist | 1d4ʺB | Agile, finesse, nonlethal
+| Rare | A. Animal | Horn | 1d6ʺP | Finesse
+| Rare | A. Animal | Jaws | 1d6ʺP | Finesse
+| Rare | A. Animal | Tail | 1d6ʺB | Finesse, trip
+| Rare | A. Animal | Talon | 1d4ʺP | Agile, finesse
+| Rare | A. Animal | Tongue | 1d6ʺB | Finesse
+| Rare | A. Animal | Wing | 1d4ʺB | Agile, finesse
+| Rare | Conrasu | Claw | 1d4ʺS | Agile, Finesse | [Ceremony](https://2e.aonprd.com/Feats.aspx?ID=2777)¹
+| Rare | Conrasu | Claw | 1d4ʺS | Agile, Finesse, Deadly D8 | [Ceremony](https://2e.aonprd.com/Feats.aspx?ID=2777)¹ + [Strengthened](https://2e.aonprd.com/Feats.aspx?ID=2786)⁹
+| Rare | Conrasu | Branch | 1d6ʺB | Backswing | [Ceremony](https://2e.aonprd.com/Feats.aspx?ID=2777)¹
+| Rare | Conrasu | Branch | 1d6ʺB | Backswing, Shove, Trip | [Ceremony](https://2e.aonprd.com/Feats.aspx?ID=2777)¹ + [Strengthened](https://2e.aonprd.com/Feats.aspx?ID=2786)⁹
+| Rare | Goloma | Claw | 1d6ʺS | Agile, Finesse | [Vicious](https://2e.aonprd.com/Heritages.aspx?ID=173)ᴴ
+| Rare | Fleshwarp | Claw | 1d4ʺS | Agile, Finesse | [Living Weapon](https://2e.aonprd.com/Feats.aspx?ID=2518)¹
+| Rare | Fleshwarp | Claw | 1d6ʺS | Agile, Finesse, Reach, Activate | [LW](https://2e.aonprd.com/Feats.aspx?ID=2518)¹ + [Mutate](https://2e.aonprd.com/Feats.aspx?ID=2522)⁵
+| Rare | Fleshwarp | Tail | 1d6ʺB | Backswing | [Living Weapon](https://2e.aonprd.com/Feats.aspx?ID=2518)¹
+| Rare | Fleshwarp | Tail | 1d8ʺB | Backswing, Reach, Activate | [LW](https://2e.aonprd.com/Feats.aspx?ID=2518)¹ + [Mutate](https://2e.aonprd.com/Feats.aspx?ID=2522)⁵
+| Rare | Fleshwarp | Horn/Jaws/Tusk | 1d6ʺP / 1d6ʺS | - | [Living Weapon](https://2e.aonprd.com/Feats.aspx?ID=2518)¹
+| Rare | Fleshwarp | Horn/Jaws/Tusk | 1d8ʺP / 1d8ʺS | Reach, Activate | [LW](https://2e.aonprd.com/Feats.aspx?ID=2518)¹ + [Mutate](https://2e.aonprd.com/Feats.aspx?ID=2522)⁵
+| Rare | Kashrishi | Horn | 1d6ʺP | Finesse | [Puncturing Horn](https://2e.aonprd.com/Feats.aspx?ID=3967)¹
+| Rare | Kashrishi | Horn | 1d8ʺP | Finesse | [Xyloshi](https://2e.aonprd.com/Heritages.aspx?ID=215)ᴴ + [Puncturing Horn](https://2e.aonprd.com/Feats.aspx?ID=3967)¹
+| Rare | Kashrishi | Horn | 1d6ʺP | Finesse, Disarm, Grapple, Shove, Trip | [PH](https://2e.aonprd.com/Feats.aspx?ID=3967)¹ + [Fighting Horn](https://2e.aonprd.com/Feats.aspx?ID=3971)⁵
+| Rare | Kashrishi | Horn | 1d8ʺP | Finesse, Disarm, Grapple, Shove, Trip | [Xyloshi](https://2e.aonprd.com/Heritages.aspx?ID=215)ᴴ + [PH](https://2e.aonprd.com/Feats.aspx?ID=3967)¹ + [Fighting Horn](https://2e.aonprd.com/Feats.aspx?ID=3971)⁵
+| Rare | Poppet | Blade | 1d6ʺS / 1d6ʺP | - | [Tsukumogami](https://2e.aonprd.com/Heritages.aspx?ID=383)ᴴ + [Made for Combat](https://2e.aonprd.com/Feats.aspx?ID=6872)¹
+| Rare | Poppet | Blade | 1d4ʺP | Agile, Finesse | [Tsukumogami](https://2e.aonprd.com/Heritages.aspx?ID=383)ᴴ + [Made for Combat](https://2e.aonprd.com/Feats.aspx?ID=6872)¹
+| Rare | Poppet | Blade | 1d4ʺB | Grapple, Trip | [Tsukumogami](https://2e.aonprd.com/Heritages.aspx?ID=383)ᴴ + [Made for Combat](https://2e.aonprd.com/Feats.aspx?ID=6872)¹
+| Rare | Sarangay | Horn | 1d6ʺP | Shove | -
+| Rare | Sarangay | Horn | 1d8ʺP | Shove, Concussive | [Crown of Bone](https://2e.aonprd.com/Feats.aspx?ID=6913)¹
+| Rare | Strix | Talon | 1d4ʺS | Agile, Finesse | [Predator](https://2e.aonprd.com/Heritages.aspx?ID=147)¹
+| Rare | Surki | Claw | 1d4ʺS / 1d4ʺB | Agile, Finesse | [Breaker](https://2e.aonprd.com/Heritages.aspx?ID=309)ᴴ
+| Rare | Surki | Claw | 1d6ʺS / 1d6ʺB / 1d6ʺForce | Razing, Finesse | [Breaker](https://2e.aonprd.com/Heritages.aspx?ID=309)ᴴ + [Metamorphosis](https://2e.aonprd.com/Feats.aspx?ID=5393)⁹
+| Rare | Yaksha | Tusk | 1d6ʺP | Finesse, Activate | [Howling Aspect](https://2e.aonprd.com/Feats.aspx?ID=6970)¹
+| Rare | Yaksha | Hair | 1d4ʺFire | Agile, Finesse, Activate | [Howling Aspect](https://2e.aonprd.com/Feats.aspx?ID=6970)¹
+| Rare | Yaoguai | Claw | 1d6ʺS | Agile, Finesse | [Animal](https://2e.aonprd.com/Heritages.aspx?ID=412)ᴴ + [Morphic](https://2e.aonprd.com/Feats.aspx?ID=6991)¹
+| Rare | Yaoguai | Spirit | 1d4ʺSpirit | Magical, Sanctified | [Celestial](https://2e.aonprd.com/Heritages.aspx?ID=413)ᴴ + [Morphic](https://2e.aonprd.com/Feats.aspx?ID=6991)¹
+| Rare | Yaoguai | Current | 1d4ʺCantrips | Magical | [Elements](https://2e.aonprd.com/Heritages.aspx?ID=414)ᴴ + [Morphic](https://2e.aonprd.com/Feats.aspx?ID=6991)¹
+| Rare | Yaoguai | Surface | 1d4ʺB | Sweep | [Object](https://2e.aonprd.com/Heritages.aspx?ID=415)ᴴ + [Morphic](https://2e.aonprd.com/Feats.aspx?ID=6991)¹
+| Rare | Yaoguai | Surface | 1d4ʺS | Sweep | [Object](https://2e.aonprd.com/Heritages.aspx?ID=415)ᴴ + [Morphic](https://2e.aonprd.com/Feats.aspx?ID=6991)¹
+| Rare | Yaoguai | Root | 1d6ʺB | Reach | [Plant](https://2e.aonprd.com/Heritages.aspx?ID=416)ᴴ + [Morphic](https://2e.aonprd.com/Feats.aspx?ID=6991)¹

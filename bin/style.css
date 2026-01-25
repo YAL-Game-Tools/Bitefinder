@@ -1,0 +1,74 @@
+body {
+	font: 15px sans-serif;
+	line-height: 1.5;
+}
+#title {
+	margin: 0;
+	transform: skewX(-5deg);
+	line-height: 1;
+}
+#subtitle {
+	transform: skewX(-5deg);
+}
+#table-wrap {
+	margin-top: 0.50em;
+}
+@media (max-width: 650px) {
+	#table-wrap {
+		overflow-x: auto;
+	}
+}
+#table {
+	border-spacing: 0 1px;
+	border-style: groove;
+	border-width: 2px;
+	border-color: threedface;
+	& > .header {
+		background: Canvas;
+		position: sticky;
+		top: 0;
+		& > th {
+			position: relative;
+			padding-right: 0.6em;
+			text-align: left;
+			border-bottom-style: groove;
+			border-bottom-width: 2px;
+			border-bottom-color: threedface;
+			&[data-sort]::after {
+				position: absolute;
+				right: 0em;
+				bottom: 0.2em;
+			}
+			&[data-sort="asc"]::after {
+				content: "↑";
+			}
+			&[data-sort="desc"]::after {
+				content: "↓";
+			}
+		}
+	}
+	& > tr.visibly-even {
+		background: #80808010;
+	}
+	& > tr {
+		& > td, & > th {
+			padding-left: 0.3em;
+		}
+		& > td:last-child {
+			padding-right: 0.3em;
+		}
+	}
+	sup {
+		font-size: 70%;
+		padding-left: 0.1em;
+	}
+}
+#filters {
+	input[type="button"].value {
+		margin-right: 0.3em;
+	}
+}
+.order-control {
+	padding: 0 0.2em;
+	margin-left: 0.3em;
+}
