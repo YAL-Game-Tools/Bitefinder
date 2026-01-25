@@ -10,7 +10,8 @@ class PostBuild {
 	public static macro function run():Void {
 		Context.onAfterGenerate(() -> {
 			var inDir = "data";
-			var outDir = "bin/data";
+			var dir = Path.directory(Compiler.getOutput());
+			var outDir = Path.join([dir, "data"]);
 			if (!FileSystem.exists(outDir)) {
 				FileSystem.createDirectory(outDir);
 			}
@@ -30,6 +31,12 @@ class PostBuild {
 				jsBytesBOM.blit(3, jsBytes, 0, jsBytes.length);
 				File.saveBytes('$outDir/$jsRel', jsBytesBOM);
 			}
+			//
+			var now = Date.now();
+			var nowStr = DateTools.format(Date.now(), "%F");
+			var indexHTML = File.getContent(Path.join([dir, "index.html"]));
+			indexHTML = indexHTML.replace("BUILD_DATE", nowStr);
+			File.saveContent(Path.join([dir, "index.php"]), indexHTML);
 		});
 	}
 }

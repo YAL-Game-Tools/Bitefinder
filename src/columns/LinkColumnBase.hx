@@ -15,6 +15,22 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 	public var knownValues:Array<String> = [];
 	public var knownValuesMap:Map<String, WikiLink> = new Map();
 	//
+	public var complexValues:Map<String, { text:String, title:String, values:Array<String> }> = new Map();
+	public function addComplexValue(name:String, values:Array<String>, ?title:String, displayName = "Multi") {
+		var joined = values.join(", ");
+		if (title == null) {
+			title = joined;
+		} else {
+			title = StringTools.replace(title, "<values>", joined);
+		}
+		complexValues[name] = {
+			text: displayName,
+			values: values,
+			title: title,
+		};
+		knownValues.remove(name);
+	}
+	//
 	public function new(name) {
 		super(name);
 		canFilter = true;
@@ -42,7 +58,13 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 		var links = getLinks(q);
 		for (i => link in links) {
 			if (i > 0) td.append(", ");
-			td.append(link.toElement());
+			var complex = complexValues[link.name];
+			if (complex != null) {
+				var abbr = document.createElement("abbr");
+				abbr.title = complex.title;
+				abbr.append(complex.text);
+				td.append(abbr);
+			} else td.append(link.toElement());
 		}
 	}
 	//
@@ -55,24 +77,13 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 		//
 		var modeSelect = document.createSelectElement();
 		modeSelect.classList.add("mode");
-		function addMode(kind:String, label:String) {
-			var option = document.createOptionElement();
-			option.value = kind;
-			option.append(label);
-			modeSelect.append(option);
-		}
-		addMode("any", "Any of these");
-		if (isMulti) addMode("all", "All of these");
-		addMode("none", "None of these");
+		modeSelect.appendOption("Any of these", "any");
+		if (isMulti) modeSelect.appendOption("All of these", "all");
+		modeSelect.appendOption("None of these", "none");
 		//
 		var valueSelect = document.createSelectElement();
-		function addValueOption(name:String) {
-			var option = document.createOptionElement();
-			option.append(name);
-			valueSelect.append(option);
-		}
-		addValueOption(emptyValue);
-		for (value in knownValues) addValueOption(value);
+		valueSelect.appendOption(emptyValue);
+		for (value in knownValues) valueSelect.appendOption(value);
 		valueSelect.addEventListener("change", (_) -> {
 			table.updateFilters();
 		});
@@ -120,7 +131,15 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 		if (matchesFilterSkip(ctr, table, item)) return true;
 		var valueNodes = getValueNodes(ctr);
 		var filterValues = [for (node in valueNodes) node.dataset.value];
+		
 		var itemValues = getLinks(item).map((link) -> link.name);
+		for (i in 0 ... itemValues.length) {
+			var complex = complexValues[itemValues[i]];
+			if (complex != null) {
+				for (val in complex.values) itemValues.push(val);
+			}
+		}
+		
 		switch (getModeSelect(ctr).value) {
 			case "any": {
 				if (filterValues.length == 0) return true;
@@ -145,7 +164,7 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 		return true;
 	}
 	override function saveFilter(ctr:Element, table:Table<T>):DynamicAccess<Any> {
-		var q = createFilterObject();
+		var q = createFilterObject(ctr);
 		q["mode"] = getModeSelect(ctr).value;
 		q["values"] = [for (node in getValueNodes(ctr)) node.dataset.value];
 		return q;

@@ -10,12 +10,40 @@ class AttackTable extends Table<Attack> {
 		columns.push(new MultiLinkColumn("Feats", (a:Attack) -> a.feats));
 		//
 		columns.push(new NameColumn("Attack"));
+		
 		var dieSize = new NumberColumn("Die", (a:Attack) -> a.dieSize);
 		dieSize.filterName = "Die Size";
 		dieSize.prefix = "d";
 		columns.push(dieSize);
-		columns.push(new MultiLinkColumn("Type", (a:Attack) -> a.damageTypes));
+		
+		var damageType = new MultiLinkColumn("Type", (a:Attack) -> a.damageTypes);
+		columns.push(damageType);
+		
 		columns.push(new MultiLinkColumn("Traits", (a:Attack) -> a.traits));
+		//
+		super.initColumns();
+		//
+		damageType.addComplexValue("SpriteSpark", [
+			"Mental",
+			"Fire",
+			"Sonic",
+			"Poison"
+		], "Depending on the chosen heritage, <values>", "Elemental");
+		damageType.addComplexValue("SpriteSpark2", [
+			"Bludgeoning",
+			"Vitality",
+			"Fire",
+			"Piercing",
+			"Slashing",
+		], "Versatile damage with trait based on element: <values>");
+		damageType.addComplexValue("ElementalCurrent", [
+			"Electricity",
+			"Cold",
+			"Fire",
+			"Piercing",
+			"Bludgeoning",
+			"Slashing",
+		], "Depending on the cantrip you've chosen, this can be: <values>", "Elemental");
 	}
 	static final lsKey = "yal.pf2e.bite.filters";
 	override function afterBuild() {

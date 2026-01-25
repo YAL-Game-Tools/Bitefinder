@@ -50,9 +50,10 @@ class TableFilter<T:table.TableValue> {
 	}
 	public static inline var typeKey = "$type";
 	public static inline var enableKey = "$enable";
-	function createFilterObject() {
+	function createFilterObject(ctr:Element) {
 		var q = new DynamicAccess<Any>();
 		q[typeKey] = name;
+		q[enableKey] = getEnableCheckbox(ctr).checked;
 		return q;
 	}
 	public function saveFilter(ctr:Element, table:Table<T>):DynamicAccess<Any> {

@@ -36,20 +36,25 @@ class AttackTableParser {
 			var damageText = item["Damage"];
 			var damageParts = damageText.split("/").map(part -> part.trim());
 			for (part in damageParts) {
+				var dieSize = 0;
+				var damageType = "";
 				var mt = rxDamage.exec(part);
 				if (mt != null) {
-					var dieSize = Std.parseInt(mt[1]);
-					var damageType = mt[2];
-					switch (damageType) {
-						case "P": damageType = "Piercing";
-						case "S": damageType = "Slashing";
-						case "B": damageType = "Bludgeoning";
-					}
-					if (attack.dieSize != 0 && attack.dieSize != dieSize) {
-						Console.warn('Die size redefinition in "$line" from ${attack.dieSize} to $dieSize');
-					} else attack.dieSize = dieSize;
-					attack.damageTypes.push(damageType);
+					dieSize = Std.parseInt(mt[1]);
+					damageType = mt[2];
+				} else damageType = part;
+				
+				switch (damageType) {
+					case "P": damageType = "Piercing";
+					case "S": damageType = "Slashing";
+					case "B": damageType = "Bludgeoning";
 				}
+				if (dieSize == 0) {
+					//
+				} else if (attack.dieSize != 0 && attack.dieSize != dieSize) {
+					Console.warn('Die size redefinition in "$line" from ${attack.dieSize} to $dieSize');
+				} else attack.dieSize = dieSize;
+				attack.damageTypes.push(damageType);
 			}
 			//
 			var traits = WikiLink.parse(item["Traits"]);

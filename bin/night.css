@@ -1,0 +1,13 @@
+body.night {
+	background: #1A202D;
+	color: white;
+	#table > .header {
+		background: #1A202D;
+	}
+	a {
+		color: #60a5fa;
+	}
+	fieldset, #table, #table > .header > th {
+		border-color: #1f2937;
+	}
+}

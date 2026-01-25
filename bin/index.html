@@ -5,10 +5,39 @@
 	<meta property="theme-color" content="#FFF037">
 	<link rel="icon" href="https://yal.cc/favicon.ico">
 	<title>So You Want to Bite People</title>
-	<link rel="stylesheet" href="style.css"/>
+	<meta property="og:title" content="So You Want to Bite People" />
+	<meta property="og:description" content="A filterable table of unarmed attacks in PF2e" />
+	<link rel="stylesheet" href="style.css?v=BUILD_DATE"/>
+	<link rel="stylesheet" href="night.css?v=BUILD_DATE"/>
 </head><body>
 	<h1 id="title">So You Want to Bite People</h1>
 	<div id="subtitle">A PF2e tool by YellowAfterlife</div>
+	<label>
+		<input type="checkbox" id="night"/>
+		Night Mode
+	</label>
+	<script>(function() {
+		var key = "yal.pf2e.bite.night";
+		var cb = document.getElementById("night");
+		var value = null;
+		try {
+			value = localStorage.getItem(key) == "1";
+		} catch (_) {}
+		if (value == null) {
+			value = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+		}
+		function sync() {
+			if (cb.checked) document.body.classList.add("night"); else document.body.classList.remove("night");
+		}
+		cb.checked = value;
+		cb.onchange = function() {
+			sync();
+			try {
+				localStorage.setItem(key, cb.checked ? "1" : "0");
+			} catch (_) {}
+		};
+		sync();
+	})()</script>
 	<fieldset id="filters"><legend>Filters</legend>
 	</fieldset>
 	<p>
@@ -17,8 +46,8 @@
 	<div id="table-wrap">
 		<table id="table"></table>
 	</div>
-	<script src="data/heritage.js"></script>
-	<script src="data/versatile.js"></script>
-	<script src="data/shared.js"></script>
-	<script src="script.js"></script>
+	<script src="data/heritage.js?v=BUILD_DATE"></script>
+	<script src="data/versatile.js?v=BUILD_DATE"></script>
+	<script src="data/shared.js?v=BUILD_DATE"></script>
+	<script src="script.js?v=BUILD_DATE"></script>
 </body></html>

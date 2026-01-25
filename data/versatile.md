@@ -22,4 +22,5 @@
 | Uncommon | Nephilim | Jaws | 1d6ʺP | Finesse, Deadly D6 | [BM](https://2e.aonprd.com/Feats.aspx?ID=4548)¹ + [Brutality](https://2e.aonprd.com/Feats.aspx?ID=7204)⁵
 | Uncommon | Nephilim | Tail | 1d4ʺB | Agile, Finesse | [Bestial Manifestation](https://2e.aonprd.com/Feats.aspx?ID=4548)¹
 | Uncommon | Nephilim | Tail | 1d4ʺB | Agile, Finesse, Deadly D6 | [BM](https://2e.aonprd.com/Feats.aspx?ID=4548)¹ + [Brutality](https://2e.aonprd.com/Feats.aspx?ID=7204)⁵
+| Uncommon | Talos | Fist | 1d6ʺB/1d6ʺP/1d6ʺS | Agile, Finesse | [Ferrousoul](https://2e.aonprd.com/Feats.aspx?ID=4324)¹
 | Rare | Beastkin | Jaws | 1d4ʺP | Agile, Finesse | -

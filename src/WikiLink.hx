@@ -32,6 +32,7 @@ class WikiLinkImpl {
 	
 	public function new(name:String, ?url, ?level) {
 		this.name = name;
+		if (url == "") url = null;
 		if (url == null && checkCommon) url = commonLinks[name];
 		this.url = url;
 		this.level = level;

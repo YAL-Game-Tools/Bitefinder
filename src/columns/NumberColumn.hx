@@ -61,7 +61,7 @@ class NumberColumn<T:table.TableValue> extends Column<T> {
 		return true;
 	}
 	override function saveFilter(ctr:Element, table:Table<T>):DynamicAccess<Any> {
-		var q = createFilterObject();
+		var q = createFilterObject(ctr);
 		q["op"] = getOpSelect(ctr).value;
 		q["value"] = getValueField(ctr).value;
 		return q;

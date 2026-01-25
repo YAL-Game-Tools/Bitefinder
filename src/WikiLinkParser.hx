@@ -13,7 +13,7 @@ class WikiLinkParser {
 	static var rxSuperDigit = new RegExp('[$superscript]', "g");
 	static var heritageMark = "ᴴ";
 	static var rxAoN = new RegExp('\\[(.+?)\\]'
-		+ '\\((.+?)\\)'
+		+ '\\((.*?)\\)'
 		+ '([$superscript$heritageMark]*)'
 	, "g");
 	public static function run(req:String) {

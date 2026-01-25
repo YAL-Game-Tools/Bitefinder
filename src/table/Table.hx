@@ -28,7 +28,7 @@ class Table<T:TableValue> {
 		build();
 	}
 	function initColumns() {
-		//
+		for (column in columns) column.ready(items);
 	}
 	//
 	function initBaseFilters() {
@@ -136,7 +136,6 @@ class Table<T:TableValue> {
 		table = cast document.getElementById("table");
 		//
 		initColumns();
-		for (column in columns) column.ready(items);
 		//
 		initFilters();
 		filterContainer.append(rootFilterPicker = createFilterPicker());
