@@ -1,8 +1,13 @@
+import tools.ShareButton;
+import js.html.URLSearchParams;
 import js.html.Console;
 import haxe.Json;
 import js.Browser;
+import js.Browser.window;
+import js.Browser.document;
 import columns.*;
 import table.*;
+using tools.HtmlTools;
 
 class AttackTable extends Table<Attack> {
 	override function initColumns() {
@@ -48,10 +53,37 @@ class AttackTable extends Table<Attack> {
 		], "Depending on the cantrip you've chosen, this can be: <values>", "Elemental");
 	}
 	
+	override function build() {
+		super.build();
+		var shareButton = tools.ShareButton.create(
+			() -> Json.stringify(saveFilters()),
+			(type, text) -> {
+				var base = (Browser.location.hostname != "localhost"
+					? 'https://yal.cc/game-tools/pf2e/bite/'
+					: Browser.location.origin + Browser.location.pathname
+				);
+				return '$base?filters-${type}=$text';
+			}
+		);
+		rootFilterPicker.appendMixed(" ", shareButton);
+	}
+	
 	static final lsKey = "yal.pf2e.bite.filters";
 	override function afterBuild() {
-		try {
-			var text = Browser.window.localStorage.getItem(lsKey);
+		var params = new URLSearchParams(Browser.location.search);
+		var p:String;
+		function then(str) {
+			Console.log("Loading", str);
+			loadFilters(Json.parse(str));
+		}
+		if ((p = params.get("filters-e")) != null) {
+			ShareButton.decode("e", p, then);
+		} else if ((p = params.get("filters-b")) != null) {
+			ShareButton.decode("b", p, then);
+		} else if ((p = params.get("filters-c")) != null) {
+			ShareButton.decode("c", p, then);
+		} else try {
+			var text = window.localStorage.getItem(lsKey);
 			if (text != null && text != "") {
 				var array = Json.parse(text);
 				loadFilters(array);
@@ -60,14 +92,28 @@ class AttackTable extends Table<Attack> {
 			Console.error("Load error:", e);
 		}
 		super.afterBuild();
-		autoSave = true;
+		canAutoSave = true;
+		window.addEventListener("beforeunload", (_) -> {
+			if (autoSaveTimeout != null) {
+				window.clearTimeout(autoSaveTimeout);
+				autoSave();
+			}
+		});
 	}
-	var autoSave = false;
+	var canAutoSave = false;
+	var autoSaveTimeout:Null<Int> = null;
+	function autoSave() {
+		autoSaveTimeout = null;
+		var filters = saveFilters();
+		window.localStorage.setItem(lsKey, Json.stringify(filters));
+		Console.log('Saved ${filters.length} filter(s)!');
+	}
 	override function updateFilters() {
 		super.updateFilters();
-		if (autoSave) {
-			var filters = saveFilters();
-			Browser.window.localStorage.setItem(lsKey, Json.stringify(filters));
+		if (canAutoSave) {
+			if (autoSaveTimeout == null) {
+				autoSaveTimeout = window.setTimeout(autoSave, 10_000);
+			}
 		}
 	}
 }
