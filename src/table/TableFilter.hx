@@ -38,12 +38,8 @@ class TableFilter<T:table.TableValue> {
 		(cast section).yalTableFilter = this;
 		return section;
 	}
-	inline function getEnableCheckbox(ctr:Element) {
+	public inline function getEnableCheckbox(ctr:Element) {
 		return ctr.querySelectorAuto("& > legend > input.enable", InputElement);
-	}
-	function matchesFilterSkip(ctr:Element, table:Table<T>, item:T):Bool {
-		if (!getEnableCheckbox(ctr).checked) return true;
-		return false;
 	}
 	public function matchesFilter(ctr:Element, table:Table<T>, item:T):Bool {
 		return true;

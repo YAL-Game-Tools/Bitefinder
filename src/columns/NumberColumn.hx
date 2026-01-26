@@ -47,7 +47,6 @@ class NumberColumn<T:table.TableValue> extends Column<T> {
 		return ctr.querySelectorAuto("& > input.value", InputElement);
 	}
 	override function matchesFilter(ctr:Element, table:Table<T>, item:T):Bool {
-		if (matchesFilterSkip(ctr, table, item)) return true;
 		var op = getOpSelect(ctr).value;
 		var filterValue = getValueField(ctr).valueAsNumber;
 		var itemValue = getter(item);

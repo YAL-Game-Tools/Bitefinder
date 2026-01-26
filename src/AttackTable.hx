@@ -1,3 +1,4 @@
+import js.html.Console;
 import haxe.Json;
 import js.Browser;
 import columns.*;
@@ -17,6 +18,7 @@ class AttackTable extends Table<Attack> {
 		columns.push(dieSize);
 		
 		var damageType = new MultiLinkColumn("Type", (a:Attack) -> a.damageTypes);
+		damageType.filterName = "Damage Type";
 		columns.push(damageType);
 		
 		columns.push(new MultiLinkColumn("Traits", (a:Attack) -> a.traits));
@@ -45,6 +47,7 @@ class AttackTable extends Table<Attack> {
 			"Slashing",
 		], "Depending on the cantrip you've chosen, this can be: <values>", "Elemental");
 	}
+	
 	static final lsKey = "yal.pf2e.bite.filters";
 	override function afterBuild() {
 		try {
@@ -53,8 +56,8 @@ class AttackTable extends Table<Attack> {
 				var array = Json.parse(text);
 				loadFilters(array);
 			}
-		} catch (_:Dynamic) {
-			
+		} catch (e:Dynamic) {
+			Console.error("Load error:", e);
 		}
 		super.afterBuild();
 		autoSave = true;

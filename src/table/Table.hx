@@ -32,7 +32,7 @@ class Table<T:TableValue> {
 	}
 	//
 	function initBaseFilters() {
-		
+		filters.push(new TableFilterGroup());
 	}
 	function initFilters() {
 		initBaseFilters();
@@ -83,7 +83,7 @@ class Table<T:TableValue> {
 				found += 1;
 			} else item.row.style.display = "none";
 		}
-		if (counterElement != null) counterElement.innerText = "" + found;
+		if (counterElement != null) counterElement.innerText = found + "/" + items.length;
 	}
 	public function updateFiltersOn(el:Element, event = "change") {
 		el.addEventListener(event, (_) -> {
@@ -97,18 +97,24 @@ class Table<T:TableValue> {
 		}
 		return result;
 	}
+	public function parseFilter(obj:DynamicAccess<Any>) {
+		var type = obj[TableFilter.typeKey];
+		if (type == null) return null;
+		var filter = filters.filter(f -> f.name == type)[0];
+		if (filter == null) return null;
+		var section = filter.createSection(this);
+		filter.loadFilter(section, this, obj);
+		return section;
+	}
 	public function loadFilters(arr:Array<DynamicAccess<Any>>) {
-		for (pair in TableTools.getFilters(this, filterContainer)) {
+		for (pair in TableTools.getFilters(this, filterContainer, true)) {
 			pair.section.remove();
 		}
 		for (obj in arr) {
-			var type = obj[TableFilter.typeKey];
-			if (type == null) continue;
-			var filter = filters.filter(f -> f.name == type)[0];
-			if (filter == null) continue;
-			var section = filter.createSection(this);
-			filter.loadFilter(section, this, obj);
-			rootFilterPicker.before(section);
+			var section = parseFilter(obj);
+			if (section != null) {
+				rootFilterPicker.before(section);
+			}
 		}
 	}
 	function sort(by:Column<T>) {

@@ -33,11 +33,17 @@ class TableTools {
 			if (then != null) then();
 		});
 	}
-	public static function getFilters<T:TableValue>(table:Table<T>, el:Element):Array<{ section: Element, filter: TableFilter<T> }> {
+	public static function getFilters<T:TableValue>(
+		table:Table<T>, el:Element, includeDisabled = false
+	):Array<{ section: Element, filter: TableFilter<T> }> {
 		var found = [];
 		for (section in el.querySelectorEls("& > .filter")) {
 			var filter:TableFilter<T> = (cast section).yalTableFilter;
-			if (filter != null) found.push({ section: section, filter: filter });
+			if (filter != null
+				&& (includeDisabled || filter.getEnableCheckbox(section).checked)
+			) {
+				found.push({ section: section, filter: filter });
+			}
 		}
 		return found;
 	}

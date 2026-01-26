@@ -128,7 +128,6 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 		return ctr.querySelectorEls("& > .values > .value");
 	}
 	override function matchesFilter(ctr:Element, table:Table<T>, item:T):Bool {
-		if (matchesFilterSkip(ctr, table, item)) return true;
 		var valueNodes = getValueNodes(ctr);
 		var filterValues = [for (node in valueNodes) node.dataset.value];
 		
