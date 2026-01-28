@@ -3,11 +3,11 @@
 | Common | Goblin | Jaws | 1d6ʺP | Finesse | [Razortooth](https://2e.aonprd.com/Heritages.aspx?ID=252)ᴴ
 | Common | Goblin | Jaws | 1d8ʺP | - | [Razortooth](https://2e.aonprd.com/Heritages.aspx?ID=252)ᴴ + [Fang Sharpener](https://2e.aonprd.com/Feats.aspx?ID=1000)¹
 | Common | Goblin | Jaws | 1d4ʺP | - | [Irongut](https://2e.aonprd.com/Heritages.aspx?ID=17)ᴴ + [Fang Sharpener](https://2e.aonprd.com/Feats.aspx?ID=1000)¹
-| Common | Goblin | Tail | 1d6ʺB | Trip | [Tailed Goblin](https://2e.aonprd.com/Heritages.aspx?ID=37)ᴴ + [Hard Tail](https://2e.aonprd.com/Feats.aspx?ID=1001)¹
+| Common | Goblin | Tail | 1d6ʺB | Trip, g:? | [Tailed Goblin](https://2e.aonprd.com/Heritages.aspx?ID=37)ᴴ + [Hard Tail](https://2e.aonprd.com/Feats.aspx?ID=1001)¹
 | Common | Orc | Tusk | 1d6ʺP | Finesse | [Tusks](https://2e.aonprd.com/Feats.aspx?ID=4519)¹
 | Common | Orc | Fist | 1d6ʺP | Agile, Finesse | [Iron Fists](https://2e.aonprd.com/Feats.aspx?ID=4513)¹
-| Common | Leshy | Nectar | 1d4ʺAcid | Ranged 20ft | [Caustic Nectar](https://2e.aonprd.com/Feats.aspx?ID=7612)¹
-| Common | Leshy | Seedpod | 1d4ʺB | Ranged 30ft | [Seedpod](https://2e.aonprd.com/Feats.aspx?ID=4497)¹
+| Common | Leshy | Nectar | 1d4ʺAcid | Ranged 20ft, g:Sicken | [Caustic Nectar](https://2e.aonprd.com/Feats.aspx?ID=7612)¹
+| Common | Leshy | Seedpod | 1d4ʺB | Ranged 30ft, g:Tangle | [Seedpod](https://2e.aonprd.com/Feats.aspx?ID=4497)¹
 | Common | Leshy | Spine | 1d6ʺP | Finesse | [Cactus](https://2e.aonprd.com/Heritages.aspx?ID=263)ᴴ
 | Uncommon | Athamaru | Quills | 1d6ʺP | Agile, Finesse | [Quilled](https://2e.aonprd.com/Heritages.aspx?ID=287)ᴴ
 | Uncommon | Catfolk | Teeth | 1d6ʺP | - | [Saber Teeth](https://2e.aonprd.com/Feats.aspx?ID=5548)¹
@@ -16,12 +16,12 @@
 | Uncommon | Centaur | Hoof | 1d8ʺB | Finesse | [Ironhoof](https://2e.aonprd.com/Heritages.aspx?ID=294)ᴴ + [Steelhoof](https://2e.aonprd.com/Feats.aspx?ID=5326)¹
 | Uncommon | Kitsune | Claw | 1d4ʺS | Agile, Finesse | [Retractable Claws](https://2e.aonprd.com/Feats.aspx?ID=2620)¹
 | Uncommon | Kitsune | Jaws | 1d6ʺP | Finesse | [Earthly Wilds](https://2e.aonprd.com/Heritages.aspx?ID=137)ᴴ
-| Uncommon | Kitsune | Foxfire | 1d4ʺFire / 1d4ʺElectricity | [Foxfire](https://2e.aonprd.com/Feats.aspx?ID=2617)¹
-| Uncommon | Kitsune | Foxfire | 1d4ʺCold / 1d4ʺElectricity | [Frozen Wind](https://2e.aonprd.com/Heritages.aspx?ID=139)ᴴ + [Foxfire](https://2e.aonprd.com/Feats.aspx?ID=2617)¹
-| Uncommon | Lizardfolk | Claw | 1d4ʺS | Agile, Finesse | -
-| Uncommon | Lizardfolk | Claw | 1d6ʺS / 1d6ʺP | Agile, Finesse | [Iruxi Armaments](https://2e.aonprd.com/Feats.aspx?ID=5633)¹
-| Uncommon | Lizardfolk | Fangs | 1d8ʺP | - | [Iruxi Armaments](https://2e.aonprd.com/Feats.aspx?ID=5633)¹
-| Uncommon | Lizardfolk | Tail | 1d6ʺB | Sweep | [Iruxi Armaments](https://2e.aonprd.com/Feats.aspx?ID=5633)¹
+| Uncommon | Kitsune | Foxfire | 1d4ʺFire / Electricity | Ranged 20ft, g:Sling | [Foxfire](https://2e.aonprd.com/Feats.aspx?ID=2617)¹
+| Uncommon | Kitsune | Foxfire | 1d4ʺCold / Electricity | Ranged 20ft, g:Sling | [Frozen Wind](https://2e.aonprd.com/Heritages.aspx?ID=139)ᴴ + [Foxfire](https://2e.aonprd.com/Feats.aspx?ID=2617)¹
+| Uncommon | Lizardfolk | Claw | 1d4ʺS | Agile, Finesse, g:Crit⁵ | -
+| Uncommon | Lizardfolk | Claw | 1d6ʺS / 1d6ʺP | Agile, Finesse, g:Crit⁵ | [Iruxi Armaments](https://2e.aonprd.com/Feats.aspx?ID=5633)¹
+| Uncommon | Lizardfolk | Fangs | 1d8ʺP | g:Crit⁵ | [Iruxi Armaments](https://2e.aonprd.com/Feats.aspx?ID=5633)¹
+| Uncommon | Lizardfolk | Tail | 1d6ʺB | Sweep, g:Crit⁵ | [Iruxi Armaments](https://2e.aonprd.com/Feats.aspx?ID=5633)¹
 | Uncommon | Kholo | Jaws | 1d6ʺP | - | -
 | Uncommon | Kholo | Jaws | 1d8ʺP | Grapple | [Crunch](https://2e.aonprd.com/Feats.aspx?ID=5590)¹
 | Uncommon | Kobold | Jaws | 1d6ʺP | Finesse | [Strongjaw](https://2e.aonprd.com/Heritages.aspx?ID=337)ᴴ
@@ -47,7 +47,7 @@
 | Rare | Automaton | Pincer | 1d6ʺP | Grapple | [Armament](https://2e.aonprd.com/Feats.aspx?ID=3090)¹
 | Rare | Automaton | Claw | 1d6ʺS | Agile, Finesse | [AA](https://2e.aonprd.com/Feats.aspx?ID=3090)¹ + [Augmentation](https://2e.aonprd.com/Feats.aspx?ID=3103)⁹
 | Rare | Automaton | Pincer | 1d8ʺP | Grapple | [AA](https://2e.aonprd.com/Feats.aspx?ID=3090)¹ + [Augmentation](https://2e.aonprd.com/Feats.aspx?ID=3103)⁹
-| Rare | Automaton | Pincer | 1d4ʺFire | Ranged 20ft | [Energy Beam](https://2e.aonprd.com/Feats.aspx?ID=3094)¹
+| Rare | Automaton | Pincer | 1d4ʺFire | Ranged 20ft, g:Burn | [Energy Beam](https://2e.aonprd.com/Feats.aspx?ID=3094)¹
 | Rare | Automaton | Pincer | 1d6ʺFire | Ranged 20ft | [Beam](https://2e.aonprd.com/Feats.aspx?ID=3094)¹ + [Augmentation](https://2e.aonprd.com/Feats.aspx?ID=3103)⁹
 | Rare | A. Animal | Antler | 1d6ʺP | Finesse
 | Rare | A. Animal | Beak | 1d6ʺP | Finesse
@@ -76,13 +76,13 @@
 | Rare | Kashrishi | Horn | 1d8ʺP | Finesse | [Xyloshi](https://2e.aonprd.com/Heritages.aspx?ID=215)ᴴ + [Puncturing Horn](https://2e.aonprd.com/Feats.aspx?ID=3967)¹
 | Rare | Kashrishi | Horn | 1d6ʺP | Finesse, Disarm, Grapple, Shove, Trip | [PH](https://2e.aonprd.com/Feats.aspx?ID=3967)¹ + [Fighting Horn](https://2e.aonprd.com/Feats.aspx?ID=3971)⁵
 | Rare | Kashrishi | Horn | 1d8ʺP | Finesse, Disarm, Grapple, Shove, Trip | [Xyloshi](https://2e.aonprd.com/Heritages.aspx?ID=215)ᴴ + [PH](https://2e.aonprd.com/Feats.aspx?ID=3967)¹ + [Fighting Horn](https://2e.aonprd.com/Feats.aspx?ID=3971)⁵
-| Rare | Poppet | Blade | 1d6ʺS / 1d6ʺP | - | [Tsukumogami](https://2e.aonprd.com/Heritages.aspx?ID=383)ᴴ + [Made for Combat](https://2e.aonprd.com/Feats.aspx?ID=6872)¹
-| Rare | Poppet | Blade | 1d4ʺP | Agile, Finesse | [Tsukumogami](https://2e.aonprd.com/Heritages.aspx?ID=383)ᴴ + [Made for Combat](https://2e.aonprd.com/Feats.aspx?ID=6872)¹
-| Rare | Poppet | Blade | 1d4ʺB | Grapple, Trip | [Tsukumogami](https://2e.aonprd.com/Heritages.aspx?ID=383)ᴴ + [Made for Combat](https://2e.aonprd.com/Feats.aspx?ID=6872)¹
+| Rare | Poppet | Blade | 1d6ʺS / P | g:Sword | [Tsukumogami](https://2e.aonprd.com/Heritages.aspx?ID=383)ᴴ + [Made for Combat](https://2e.aonprd.com/Feats.aspx?ID=6872)¹
+| Rare | Poppet | Blade | 1d4ʺP | Agile, Finesse, g:Knife | [Tsukumogami](https://2e.aonprd.com/Heritages.aspx?ID=383)ᴴ + [Made for Combat](https://2e.aonprd.com/Feats.aspx?ID=6872)¹
+| Rare | Poppet | Blade | 1d4ʺB | Grapple, Trip, g:Flail | [Tsukumogami](https://2e.aonprd.com/Heritages.aspx?ID=383)ᴴ + [Made for Combat](https://2e.aonprd.com/Feats.aspx?ID=6872)¹
 | Rare | Sarangay | Horn | 1d6ʺP | Shove | -
 | Rare | Sarangay | Horn | 1d8ʺP | Shove, Concussive | [Crown of Bone](https://2e.aonprd.com/Feats.aspx?ID=6913)¹
-| Rare | Sprite | Spark | 1d4ʺSpriteSpark | Ranged 20ft | [Any]()ᴴ + [Spark](https://2e.aonprd.com/Feats.aspx?ID=2635)¹
-| Rare | Sprite | Spark | 1d4ʺSpriteSpark / SpriteSpark2 | Ranged 30ft | [Any]()ᴴ + [Spark](https://2e.aonprd.com/Feats.aspx?ID=2635)¹ + [Elemental](https://2e.aonprd.com/Feats.aspx?ID=6870)⁵
+| Rare | Sprite | Spark | 1d4ʺSpriteSpark | Ranged 20ft, g:Sling | [Any]()ᴴ + [Spark](https://2e.aonprd.com/Feats.aspx?ID=2635)¹
+| Rare | Sprite | Spark | 1d4ʺSpriteSpark / SpriteSpark2 | Ranged 30ft, g:Sling | [Any]()ᴴ + [Spark](https://2e.aonprd.com/Feats.aspx?ID=2635)¹ + [Elemental](https://2e.aonprd.com/Feats.aspx?ID=6870)⁵
 | Rare | Strix | Talon | 1d4ʺS | Agile, Finesse | [Predator](https://2e.aonprd.com/Heritages.aspx?ID=147)¹
 | Rare | Surki | Claw | 1d4ʺS / 1d4ʺB | Agile, Finesse | [Breaker](https://2e.aonprd.com/Heritages.aspx?ID=309)ᴴ
 | Rare | Surki | Claw | 1d6ʺS / B / Force | Razing, Finesse | [Breaker](https://2e.aonprd.com/Heritages.aspx?ID=309)ᴴ + [Metamorphosis](https://2e.aonprd.com/Feats.aspx?ID=5393)⁹
