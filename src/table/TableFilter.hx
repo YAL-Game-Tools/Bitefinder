@@ -11,7 +11,7 @@ class TableFilter<T:table.TableValue> {
 	public function new(name:String) {
 		this.name = name;
 	}
-	public function getFilterName() {
+	public function getFullName() {
 		return name;
 	}
 	public function buildFilter(ctr:Element, table:Table<T>) {
@@ -29,7 +29,7 @@ class TableFilter<T:table.TableValue> {
 		enable.checked = true;
 		table.updateFiltersOn(enable);
 		//
-		legend.appendMixed(enable, " ", getFilterName());
+		legend.appendMixed(enable, " ", getFullName());
 		//
 		TableTools.addOrderControls(section, legend, () -> { table.updateFilters(); });
 		section.append(legend);

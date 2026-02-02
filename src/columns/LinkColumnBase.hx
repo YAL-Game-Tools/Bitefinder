@@ -3,7 +3,6 @@ package columns;
 import haxe.DynamicAccess;
 import js.html.SelectElement;
 import js.html.TableCellElement;
-import table.TableTools;
 import js.html.Element;
 import table.Table;
 import js.Browser.document;
@@ -15,7 +14,7 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 	public var knownValues:Array<String> = [];
 	public var knownValuesMap:Map<String, WikiLink> = new Map();
 	//
-	public var complexValues:Map<String, { text:String, title:String, values:Array<String> }> = new Map();
+	public var complexValues:Map<String, LinkColumnComplexValue> = new Map();
 	public function addComplexValue(name:String, values:Array<String>, ?title:String, displayName = "Multi") {
 		var joined = values.join(", ");
 		if (title == null) {
@@ -23,12 +22,24 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 		} else {
 			title = StringTools.replace(title, "<values>", joined);
 		}
-		complexValues[name] = {
-			text: displayName,
-			values: values,
-			title: title,
-		};
+		var cv = new LinkColumnComplexValue();
+		cv.text = displayName;
+		cv.title = title;
+		cv.values = values;
+		complexValues[name] = cv;
 		knownValues.remove(name);
+	}
+	public function addValueAbbr(name:String, label:String, ?classNames:Array<String>, ?title:String) {
+		var cv = new LinkColumnComplexValue();
+		cv.text = label ?? name;
+		cv.values = [name];
+		if (title != null) {
+			cv.title = title;
+		} else if (label != null) {
+			cv.title = name;
+		}
+		if (classNames != null) cv.classNames = classNames;
+		complexValues[name] = cv;
 	}
 	//
 	public function new(name) {
@@ -63,6 +74,7 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 				var abbr = document.createElement("abbr");
 				abbr.title = complex.title;
 				abbr.append(complex.text);
+				for (className in complex.classNames) abbr.classList.add(className);
 				td.append(abbr);
 			} else td.append(link.toElement());
 		}
@@ -176,5 +188,14 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 		for (name in names) {
 			addFilterValue(ctr, table, name);
 		}
+	}
+}
+class LinkColumnComplexValue {
+	public var text:String;
+	public var title:String;
+	public var values:Array<String>;
+	public var classNames:Array<String> = [];
+	public function new() {
+		
 	}
 }

@@ -62,6 +62,23 @@ body {
 		font-size: 70%;
 		padding-left: 0.1em;
 	}
+	abbr {
+		cursor: help;
+	}
+	.rarity {
+		background-color: #531004;
+		color: white;
+		display: inline-block;
+		padding: 0.1em 0.3em;
+		font-size: 70%;
+		text-decoration: none;
+	}
+	.rarity.uncommon {
+		background-color: #c45500;
+	}
+	.rarity.rare {
+		background-color: #0c1466;
+	}
 }
 #filters {
 	input[type="button"].value {

@@ -1,7 +1,5 @@
 package columns;
 
-import js.html.TableCellElement;
-
 class LinkColumn<T:table.TableValue> extends LinkColumnBase<T> {
 	public var getter:T->WikiLink;
 	public function new(name, getter) {

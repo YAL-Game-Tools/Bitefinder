@@ -44,7 +44,7 @@ class Table<T:TableValue> {
 		//
 		var select = document.createSelectElement();
 		select.appendOption("");
-		for (filter in filters) select.appendOption(filter.getFilterName(), filter.name);
+		for (filter in filters) select.appendOption(filter.getFullName(), filter.name);
 		//
 		var button = document.createInputElement();
 		button.type = "button";

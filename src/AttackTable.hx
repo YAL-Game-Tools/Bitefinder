@@ -4,13 +4,19 @@ import js.html.Console;
 import haxe.Json;
 import js.Browser;
 import js.Browser.window;
-import js.Browser.document;
 import columns.*;
 import table.*;
 using tools.HtmlTools;
 
 class AttackTable extends Table<Attack> {
 	override function initColumns() {
+		var rarity = new LinkColumn("R", (a:Attack) -> a.rarity);
+		rarity.fullName = "Rarity";
+		rarity.addValueAbbr("Common", "C", ["rarity", "common"]);
+		rarity.addValueAbbr("Uncommon", "U", ["rarity", "uncommon"]);
+		rarity.addValueAbbr("Rare", "R", ["rarity", "rare"]);
+		columns.push(rarity);
+		
 		columns.push(new LinkColumn("Ancestry", (a:Attack) -> a.ancestry));
 		columns.push(new LinkColumn("Heritage", (a:Attack) -> a.heritage));
 		columns.push(new MultiLinkColumn("Feats", (a:Attack) -> a.feats));
@@ -18,12 +24,12 @@ class AttackTable extends Table<Attack> {
 		columns.push(new NameColumn("Attack"));
 		
 		var dieSize = new NumberColumn("Die", (a:Attack) -> a.dieSize);
-		dieSize.filterName = "Die Size";
+		dieSize.fullName = "Die Size";
 		dieSize.prefix = "d";
 		columns.push(dieSize);
 		
 		var damageType = new MultiLinkColumn("Type", (a:Attack) -> a.damageTypes);
-		damageType.filterName = "Damage Type";
+		damageType.fullName = "Damage Type";
 		columns.push(damageType);
 		
 		columns.push(new MultiLinkColumn("Traits", (a:Attack) -> a.traits));
