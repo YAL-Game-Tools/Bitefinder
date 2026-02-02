@@ -8,6 +8,7 @@ class Attack extends table.TableValue {
 	public var feats:Array<WikiLink> = [];
 	public var dieSize = 0;
 	public var damageTypes:Array<WikiLink> = [];
+	public var weaponGroup = "Brawling";
 	
 	public var traits:Array<WikiLink> = [];
 	public static var knownTraits:Array<String> = [];

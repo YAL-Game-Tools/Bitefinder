@@ -33,6 +33,10 @@ class AttackTable extends Table<Attack> {
 		columns.push(damageType);
 		
 		columns.push(new MultiLinkColumn("Traits", (a:Attack) -> a.traits));
+		
+		var weaponGroup = new LinkColumn("Group", (a:Attack) -> a.weaponGroup);
+		weaponGroup.filterName = "Weapon Group";
+		columns.push(weaponGroup);
 		//
 		super.initColumns();
 		//

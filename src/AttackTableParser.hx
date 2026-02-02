@@ -58,7 +58,20 @@ class AttackTableParser {
 			}
 			//
 			var traits = WikiLink.parse(item["Traits"]);
-			for (trait in traits) attack.traits.push(trait);
+			for (trait in traits) {
+				if (trait.name.startsWith("G:")) {
+					if (trait.name == "G:Crit") {
+						trait.name = "CritSpec";
+						attack.traits.push(trait);
+					} else {
+						var group = trait.name.substr(2);
+						//if (group == "?") group = "Unspecified";
+						attack.weaponGroup = group;
+					}
+				} else {
+					attack.traits.push(trait);
+				}
+			}
 			//
 			var feats = WikiLink.parse(item["Requirements"]);
 			for (link in feats) {
