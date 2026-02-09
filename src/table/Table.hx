@@ -34,8 +34,9 @@ class Table<T:TableValue> {
 	function initBaseFilters() {
 		filters.push(new TableFilterGroup());
 	}
-	function initFilters() {
+	function initFilters(items) {
 		initBaseFilters();
+		for (filter in filters) filter.ready(items);
 		for (column in columns) if (column.canFilter) filters.push(column);
 	}
 	public function createFilterPicker() {
@@ -92,7 +93,7 @@ class Table<T:TableValue> {
 	}
 	public function saveFilters() {
 		var result = [];
-		for (pair in TableTools.getFilters(this, filterContainer)) {
+		for (pair in TableTools.getFilters(this, filterContainer, true)) {
 			result.push(pair.filter.saveFilter(pair.section, this));
 		}
 		return result;
@@ -143,12 +144,12 @@ class Table<T:TableValue> {
 		//
 		initColumns();
 		//
-		initFilters();
+		initFilters(items);
 		filterContainer.append(rootFilterPicker = createFilterPicker());
 		//
 		header = document.createTableRowElement();
 		header.classList.add("header");
-		for (col in columns) {
+		for (col in columns) if (col.show) {
 			var th = document.createElement("th");
 			col.buildHeader(th);
 			col.header = th;
@@ -161,7 +162,7 @@ class Table<T:TableValue> {
 		//
 		for (attack in items) {
 			var tr = attack.row;
-			for (col in columns) {
+			for (col in columns) if (col.show) {
 				var td = document.createTableCellElement();
 				col.buildValue(td, attack);
 				tr.append(td);

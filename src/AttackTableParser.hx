@@ -28,10 +28,12 @@ class AttackTableParser {
 				item[header[i]] = lineCells[i] ?? "";
 			}
 			//
+			var ancestry = item["Ancestry"] ?? "Any";
+			var heritage = item["Heritage"];
 			var attack = new Attack(item["Attack"] ?? "???");
 			attack.rarity = item["Rarity"];
-			attack.ancestry = item["Ancestry"] ?? "Any";
-			attack.heritage = item["Heritage"];
+			attack.ancestry = ancestry;
+			attack.heritage = heritage;
 			//
 			var damageText = item["Damage"];
 			var damageParts = damageText.split("/").map(part -> part.trim());
@@ -73,12 +75,36 @@ class AttackTableParser {
 				}
 			}
 			//
+			var selfName = isVersatile ? heritage : ancestry;
 			var feats = WikiLink.parse(item["Requirements"]);
 			for (link in feats) {
+				link.name = link.name.replace("@", selfName);
 				if (link.level == 0) {
+					heritage = link.name;
 					attack.heritage = link;
 				} else {
 					attack.feats.push(link);
+				}
+			}
+			
+			//
+			if (isVersatile) {
+				for (size in ["Tiny", "Small", "Medium", "Large"]) {
+					attack.ancestrySizes.push(size);
+				}
+			} else {
+				var sizes = App.ancestrySizes[ancestry];
+				if (sizes != null) {
+					for (item in sizes) {
+						var sizeHeritage = item.heritage;
+						if (heritage != null && sizeHeritage != null) {
+							sizeHeritage = sizeHeritage.replace("@", selfName);
+							if ((heritage == sizeHeritage) == item.not) continue;
+						}
+						attack.ancestrySizes.push(item.size);
+					}
+				} else {
+					Console.warn('Attack ${attack.name} references ancestry ${attack.ancestry} without a known size.');
 				}
 			}
 			//

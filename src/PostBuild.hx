@@ -8,29 +8,26 @@ using StringTools;
 
 class PostBuild {
 	public static macro function run():Void {
-		Context.onAfterGenerate(() -> {
+		function compileDataFile(dir) {
+			var buf = new StringBuf();
 			var inDir = "data";
-			var dir = Path.directory(Compiler.getOutput());
-			var outDir = Path.join([dir, "data"]);
-			if (!FileSystem.exists(outDir)) {
-				FileSystem.createDirectory(outDir);
-			}
+			buf.add('window.yalAttackData ??= {};');
 			for (rel in FileSystem.readDirectory(inDir)) {
 				var name = Path.withoutExtension(rel);
 				var md = File.getContent('$inDir/$rel').replace("\r", "");
-				var js = [
-					'window.AutoData ??= {};',
-					'AutoData.$name = `$md`;',
-				].join("\n");
-				var jsRel = Path.withExtension(rel, "js");
-				var jsBytes = Bytes.ofString(js);
-				var jsBytesBOM = Bytes.alloc(jsBytes.length + 3);
-				for (i => b in [0xEF, 0xBB, 0xBF]) {
-					jsBytesBOM.set(i, b);
-				}
-				jsBytesBOM.blit(3, jsBytes, 0, jsBytes.length);
-				File.saveBytes('$outDir/$jsRel', jsBytesBOM);
+				buf.add('\n' + 'yalAttackData.$name = `$md`;');
 			}
+			var jsBytes = Bytes.ofString(buf.toString());
+			var jsBytesBOM = Bytes.alloc(jsBytes.length + 3);
+			for (i => b in [0xEF, 0xBB, 0xBF]) {
+				jsBytesBOM.set(i, b);
+			}
+			jsBytesBOM.blit(3, jsBytes, 0, jsBytes.length);
+			File.saveBytes('$dir/data.js', jsBytesBOM);
+		}
+		Context.onAfterGenerate(() -> {
+			var dir = Path.directory(Compiler.getOutput());
+			compileDataFile(dir);
 			//
 			var now = Date.now();
 			var nowStr = DateTools.format(Date.now(), "%F");

@@ -15,9 +15,14 @@ class AttackTable extends Table<Attack> {
 		rarity.addValueAbbr("Common", "C", ["rarity", "common"]);
 		rarity.addValueAbbr("Uncommon", "U", ["rarity", "uncommon"]);
 		rarity.addValueAbbr("Rare", "R", ["rarity", "rare"]);
+		rarity.show = false;
 		columns.push(rarity);
 		
 		columns.push(new LinkColumn("Ancestry", (a:Attack) -> a.ancestry));
+		var size = new MultiLinkColumn("Ancestry Size", (a:Attack) -> a.ancestrySizes);
+		size.show = false;
+		columns.push(size);
+		
 		columns.push(new LinkColumn("Heritage", (a:Attack) -> a.heritage));
 		columns.push(new MultiLinkColumn("Feats", (a:Attack) -> a.feats));
 		//
@@ -35,7 +40,7 @@ class AttackTable extends Table<Attack> {
 		columns.push(new MultiLinkColumn("Traits", (a:Attack) -> a.traits));
 		
 		var weaponGroup = new LinkColumn("Group", (a:Attack) -> a.weaponGroup);
-		weaponGroup.filterName = "Weapon Group";
+		weaponGroup.fullName = "Weapon Group";
 		columns.push(weaponGroup);
 		//
 		super.initColumns();
@@ -112,17 +117,24 @@ class AttackTable extends Table<Attack> {
 	}
 	var canAutoSave = false;
 	var autoSaveTimeout:Null<Int> = null;
+	var freshlySaved:Null<Int> = null;
+	var saveInterval = 5_000;
 	function autoSave() {
 		autoSaveTimeout = null;
 		var filters = saveFilters();
 		window.localStorage.setItem(lsKey, Json.stringify(filters));
 		Console.log('Saved ${filters.length} filter(s)!');
+		freshlySaved = window.setTimeout(() -> {
+			freshlySaved = null;
+		}, saveInterval);
 	}
 	override function updateFilters() {
 		super.updateFilters();
 		if (canAutoSave) {
-			if (autoSaveTimeout == null) {
-				autoSaveTimeout = window.setTimeout(autoSave, 10_000);
+			if (freshlySaved == null) {
+				autoSave();
+			} else if (autoSaveTimeout == null) {
+				autoSaveTimeout = window.setTimeout(autoSave, saveInterval);
 			}
 		}
 	}

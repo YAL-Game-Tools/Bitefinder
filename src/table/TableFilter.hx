@@ -14,6 +14,10 @@ class TableFilter<T:table.TableValue> {
 	public function getFullName() {
 		return name;
 	}
+	
+	public function ready(items:Array<T>) {
+		
+	}
 	public function buildFilter(ctr:Element, table:Table<T>) {
 		
 	}

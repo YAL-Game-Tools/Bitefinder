@@ -6,6 +6,7 @@ import js.html.Element;
 import js.html.TableCellElement;
 
 class Column<T:table.TableValue> extends TableFilter<T> {
+	public var show = true;
 	public var fullName:String = null;
 	public var canSort = false;
 	public var canFilter = false;
@@ -27,8 +28,5 @@ class Column<T:table.TableValue> extends TableFilter<T> {
 	}
 	public function compare(a:T, b:T) {
 		return 0;
-	}
-	public function ready(items:Array<T>) {
-		
 	}
 }
