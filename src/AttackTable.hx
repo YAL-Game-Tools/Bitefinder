@@ -26,7 +26,7 @@ class AttackTable extends Table<Attack> {
 		columns.push(new LinkColumn("Heritage", (a:Attack) -> a.heritage));
 		columns.push(new MultiLinkColumn("Feats", (a:Attack) -> a.feats));
 		//
-		columns.push(new NameColumn("Attack"));
+		columns.push(new LinkColumn("Attack", (a:Attack) -> a.name));
 		
 		var dieSize = new NumberColumn("Die", (a:Attack) -> a.dieSize);
 		dieSize.fullName = "Die Size";

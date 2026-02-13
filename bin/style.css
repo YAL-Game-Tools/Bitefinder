@@ -2,6 +2,20 @@ body {
 	font: 15px sans-serif;
 	line-height: 1.5;
 }
+body > p,
+body > details p,
+body > details,
+ul {
+	margin: 0.25em 0;
+}
+ul {
+	padding-left: 1.5em;
+}
+body > details, body > details details {
+	& > *:not(summary) {
+		margin-left: 1em;
+	}
+}
 #title {
 	margin: 0;
 	transform: skewX(-5deg);
@@ -34,6 +48,9 @@ body {
 			border-bottom-style: groove;
 			border-bottom-width: 2px;
 			border-bottom-color: threedface;
+			&.can-sort {
+				cursor: default;
+			}
 			&[data-sort]::after {
 				position: absolute;
 				right: 0em;
@@ -58,10 +75,6 @@ body {
 			padding-right: 0.3em;
 		}
 	}
-	sup {
-		font-size: 70%;
-		padding-left: 0.1em;
-	}
 	abbr {
 		cursor: help;
 	}
@@ -79,6 +92,10 @@ body {
 	.rarity.rare {
 		background-color: #0c1466;
 	}
+}
+#table sup, body > details sup {
+	font-size: 70%;
+	padding-left: 0.1em;
 }
 #filters {
 	input[type="button"].value {

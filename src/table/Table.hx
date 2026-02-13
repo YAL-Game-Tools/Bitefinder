@@ -1,5 +1,6 @@
 package table;
 
+import js.html.MouseEvent;
 import haxe.DynamicAccess;
 import js.html.Element;
 import js.html.TableRowElement;
@@ -15,16 +16,27 @@ class Table<T:TableValue> {
 	public var filterContainer:Element;
 	public var rootFilterPicker:Element;
 	public var counterElement:Element;
+	public var resetOrderElement:Element;
+	var resetSorter:OrderColumn<T>;
 	//
 	public var columns:Array<Column<T>> = [];
 	public var filters:Array<TableFilter<T>> = [];
 	public var items:Array<T>;
 	//
-	public function new(table, items, filterContainer, counterElement) {
+	public function new(table, items, filterContainer, counterElement, resetOrderElement) {
 		this.table = table;
 		this.items = items;
 		this.filterContainer = filterContainer;
 		this.counterElement = counterElement;
+		this.resetOrderElement = resetOrderElement;
+		if (resetOrderElement != null) {
+			resetSorter = new OrderColumn(this);
+			resetOrderElement.onclick = function() {
+				resetSorter.header.setAttribute("data-sort", "");
+				sort(resetSorter);
+				resetOrderElement.style.display = "none";
+			}
+		}
 		build();
 	}
 	function initColumns() {
@@ -119,6 +131,7 @@ class Table<T:TableValue> {
 		}
 	}
 	function sort(by:Column<T>) {
+		resetOrderElement.style.display = "";
 		var curr = header.querySelector("th[data-sort]");
 		if (curr != null && curr != by.header) {
 			curr.removeAttribute("data-sort");
@@ -153,9 +166,17 @@ class Table<T:TableValue> {
 			var th = document.createElement("th");
 			col.buildHeader(th);
 			col.header = th;
-			if (col.canSort) th.onclick = (e) -> {
-				sort(col);
-			};
+			if (col.canSort) {
+				th.classList.add("can-sort");
+				if (th.title != "") {
+					th.title += "\nClick to sort";
+				} else th.title = "Click to sort";
+				th.addEventListener("click", (e:MouseEvent) -> {
+					sort(col);
+					e.preventDefault();
+					return false;
+				});
+			}
 			header.append(th);
 		}
 		table.append(header);

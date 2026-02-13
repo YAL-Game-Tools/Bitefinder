@@ -56,6 +56,7 @@ class App {
 			attacks,
 			document.querySelectorAuto("#filters"),
 			document.querySelectorAuto("#match-count"),
+			document.querySelectorAuto("#reset-order"),
 		);
 	}
 }

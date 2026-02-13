@@ -4,18 +4,119 @@
 	<meta name="viewport" content="width=device-width">
 	<meta property="theme-color" content="#FFF037">
 	<link rel="icon" href="https://yal.cc/favicon.ico">
-	<title>So You Want to Bite People</title>
-	<meta property="og:title" content="So You Want to Bite People" />
+	<title>Bitefinder</title>
+	<meta property="og:title" content="Bitefinder" />
 	<meta property="og:description" content="A filterable table of unarmed attacks in PF2e" />
 	<link rel="stylesheet" href="style.css?v=BUILD_DATE"/>
 	<link rel="stylesheet" href="night.css?v=BUILD_DATE"/>
 </head><body>
-	<h1 id="title">So You Want to Bite People</h1>
-	<div id="subtitle">A PF2e tool by YellowAfterlife</div>
+	<h1 id="title">Bitefinder</h1>
+	<div id="subtitle">AKA "So You Want to Bite People"</div>
 	<label>
 		<input type="checkbox" id="night"/>
 		Night Mode
 	</label>
+	<p>
+		This is a filterable table with Pathfinder 2nd Edition's
+		various unarmed attacks granted by ancestries/heritages!
+	</p><p>
+		A tool by <a href="https://yal.cc">YellowAfterlife</a>,
+		written in <a href="https://haxe.org">Haxe</a>.
+	</p>
+	<details><summary>Other ways to obtain unarmed attacks</summary>
+		<p>
+			Rest assured, this isn't an exhaustive list.
+		</p>
+		<details><summary>Classes</summary>
+			<p>
+				Some classes (and dedications of) grant unarmed attacks:
+			</p><ul><li>
+				Barbarians can gain 1d10 attacks through
+				<a href="https://2e.aonprd.com/Instincts.aspx?ID=8">Animal Instinct</a>
+				while raging. These increase to 1d12 at level 7.<br>
+				However! If you can get a 1d8 unarmed attack some other way,
+				you might be better off taking an Instinct with a higher flat damage increase instead.
+			</li><li>
+				Magus has <a href="https://2e.aonprd.com/Feats.aspx?ID=3033">Arcane Fists</a><sup>1</sup>
+				for 1d6 lethal fist attacks.
+			</li><li>
+				Witch has <a href="https://2e.aonprd.com/Feats.aspx?ID=4995">Witch Armaments</a><sup>1</sup>
+				for a few unarmed attacks,
+				notable options being Living Hair (1d4 Bludgeoning with Disarm, Trip, Agile, Finesse)
+				and Iron Teeth (d8 Piercing).<br>
+				If weird AP feats are allowed, hair can be later upgraded via
+				<a href="https://2e.aonprd.com/Feats.aspx?ID=2690">Syu Tak-Nwa's Deadly Hair</a><sup>6</sup>
+				to 1d6 with added Grapple, thus replacing most uses of a free hand as far as athletic manuevers are concerned.
+			</li><li>
+				Monks get some stances that do 1d8 damage without requiring you to be unarmored.
+				<a href="https://2e.aonprd.com/Feats.aspx?ID=5985">Crushing Grab</a><sup>2</sup> is also cool if you're doing athletics.
+			</li></ul>
+		</details>
+		<details><summary>Dedications</summary>
+			<ul>
+				<li>
+					<a href="https://2e.aonprd.com/Feats.aspx?ID=5436">Clawdancer</a><sup>2</sup>
+					grants a stance for 1d6 Slashing / 1d8 Slashing unarmed attacks with feats for added options.
+				</li><li>
+					<a href="https://2e.aonprd.com/Feats.aspx?ID=7581">Rivethun Invoker</a><sup>2</sup>
+					gets a <a href="https://2e.aonprd.com/Feats.aspx?ID=7582">Claw</a><sup>4</sup> feat with 1d8 Spirit damage with Agile, Finesse, and Magical traits.<br>
+					However, this attack doesn't inherit your weapon proficiency runes, so it scales pretty poorly.
+				</li><li>
+					<a href="https://2e.aonprd.com/Feats.aspx?ID=4371">Stone Brawler</a><sup>2</sup>
+					grants a stance for 1d8 Bludgeoning unarmed attacks with Forceful and Magical traits.<br>
+					However, this dedication is lock-in and only has a single feat to choose from at levels 4 and 6.
+				</li><li>
+					<a href="https://2e.aonprd.com/Feats.aspx?ID=1940">Dragon Disciple</a><sup>2</sup> (kobolds only)
+					has a <a href="https://2e.aonprd.com/Feats.aspx?ID=1941">Claw</a><sup>4</sup>
+					feat for a 1d6 Slashing claws attack with Agile and Finesse.
+				</li><li>
+					<a href="https://2e.aonprd.com/Feats.aspx?ID=3127">Sterling Dynamo</a><sup>2</sup> (uncommon)
+					gets a few options (1d6 Bludgeoning, 1d4 Bludgeoning) with Grapple/Trip
+					and an option for dice increment at cost of spending 1 action to wind up the dynamo.
+				</li><li>
+					<a href="https://2e.aonprd.com/Archetypes.aspx?ID=270">Wrestler</a><sup>2</sup>
+					doesn't give you any new attacks, but has a bunch of Athletics-related fun things to do
+				</li><li>
+					<a href="https://2e.aonprd.com/Archetypes.aspx?ID=274">Spirit Warrior</a><sup>2</sup>
+					increases your fist die size to d6 and gives it a Parry trait,
+					with a later option to have +2 AC from parrying with your fist.
+				</li><li>
+					<a href="https://2e.aonprd.com/Archetypes.aspx?ID=194">Mind Smith</a><sup>2</sup>
+					allows you to create a variety of weapons (notably one-handed 1d8 and two-handed 1d10 with Reach) and then add Grapple / Trip to it.
+				</li><li>
+					<a href="https://2e.aonprd.com/Archetypes.aspx?ID=167">Pactbound</a><sup>2</sup> (rare)
+					offers an option to get 1d8 Bludgeoning
+					<a href="https://2e.aonprd.com/Feats.aspx?ID=3416">horns</a><sup>6</sup> with Shove and Trip traits.
+					And on level 16 you can become Large and get Reach...
+				</li>
+			</ul><p>
+				And here are some dedications that are probably not worth taking just for an unarmed attack:
+			</p><ul>
+				<li>
+					<a href="https://2e.aonprd.com/Feats.aspx?ID=3545">Vampire</a><sup>2</sup> (rare)
+					gets Fangs (1d6 Piercing with Grapple)
+					and has a <a href="https://2e.aonprd.com/Feats.aspx?ID=3550">Claw</a><sup>6</sup>
+					feat for 1d4 Slashing with a free grapple if you hit the same enemy twice in one round.
+				</li><li>
+					<a href="https://2e.aonprd.com/Feats.aspx?ID=3557">Zombie</a><sup>2</sup> (rare)
+					gets a jaws with 1d8 Piercing, but you can only bite a creature that you grabbed.
+				</li><li>
+					<a href="https://2e.aonprd.com/Feats.aspx?ID=3504">Ghoul</a><sup>2</sup> (rare)
+					gets Claws (1d4 Slashing with Agile, Finesse)
+					and Jaws (1d6 Piercing with Finesse)
+				</li><li>
+					<a href="https://2e.aonprd.com/Feats.aspx?ID=5486">Werecreatures</a><sup>2</sup> (rare)
+					offer a variety of unarmed attacks with some drawbacks
+				</li>
+			</ul>
+		</details>
+		<details><summary>Grafts</summary>
+			<p>
+				There's <a href="https://2e.aonprd.com/Equipment.aspx?Category=114">a bunch</a>,
+				but these sure cost.
+			</p>
+		</details>
+	</details>
 	<script>(function() {
 		var key = "yal.pf2e.bite.night";
 		var cb = document.getElementById("night");
@@ -43,6 +144,7 @@
 	</fieldset>
 	<p>
 		Matching attacks: <span id="match-count">?</span>
+		<input type="button" id="reset-order" value="Reset Order" style="display:none"/>
 	</p>
 	<div id="table-wrap">
 		<table id="table"></table>
