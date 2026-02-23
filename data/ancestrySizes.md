@@ -3,7 +3,7 @@ Elf: Medium
 Gnome: Small
 Goblin: Small
 Halfling: Small
-Human: Small
+Human: Medium
 Leshy: Small
 Orc: Medium
 

@@ -30,6 +30,7 @@
 | Uncommon | Minotaur | Horn | 1d8ʺP | - | -
 | Uncommon | Minotaur | Horn | 1d6ʺP | Agile | [Littlehorn @](https://2e.aonprd.com/Heritages.aspx?ID=305)ᴴ
 | Uncommon | Nagaji | Fangs | 1d6ʺP | Finesse | 
+| Uncommon | Nagaji | Fangs | 1d6ʺP | Finesse, Reach, Activate | [Whipfang @](https://2e.aonprd.com/Heritages.aspx?ID=220)ᴴ
 | Uncommon | Nagaji | Tail | 1d6ʺB | Finesse | [Sacred @](https://2e.aonprd.com/Heritages.aspx?ID=217)ᴴ
 | Uncommon | Skeleton | Claw | 1d6ʺS | Finesse | [Monstrous @](https://2e.aonprd.com/Heritages.aspx?ID=202)ᴴ
 | Uncommon | Skeleton | Horn | 1d6ʺP | Finesse | [Monstrous @](https://2e.aonprd.com/Heritages.aspx?ID=202)ᴴ
@@ -68,6 +69,7 @@
 | Rare | Dragonet | Jaws | 1d4ʺP | Finesse | -
 | Rare | Dragonet | Jaws | 1d4ʺP | Finesse, Silver | [House @](https://2e.aonprd.com/Heritages.aspx?ID=424)ᴴ
 | Rare | Goloma | Claw | 1d6ʺS | Agile, Finesse | [Vicious @](https://2e.aonprd.com/Heritages.aspx?ID=173)ᴴ
+| Rare | Goloma | Claw | 1d6ʺS | Agile, Finesse, Parry | [Vicious](https://2e.aonprd.com/Heritages.aspx?ID=173)ᴴ + [Protective](https://2e.aonprd.com/Feats.aspx?ID=2811)⁵
 | Rare | Fleshwarp | Claw | 1d4ʺS | Agile, Finesse | [Living Weapon](https://2e.aonprd.com/Feats.aspx?ID=2518)¹
 | Rare | Fleshwarp | Claw | 1d6ʺS | Agile, Finesse, Reach, Activate | [LW=Living Weapon](https://2e.aonprd.com/Feats.aspx?ID=2518)¹ + [Mutate](https://2e.aonprd.com/Feats.aspx?ID=2522)⁵
 | Rare | Fleshwarp | Tail | 1d6ʺB | Backswing | [Living Weapon](https://2e.aonprd.com/Feats.aspx?ID=2518)¹

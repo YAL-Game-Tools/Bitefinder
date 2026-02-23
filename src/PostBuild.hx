@@ -13,6 +13,7 @@ class PostBuild {
 			var inDir = "data";
 			buf.add('window.yalAttackData ??= {};');
 			for (rel in FileSystem.readDirectory(inDir)) {
+				if (Path.extension(rel) != "md") continue;
 				var name = Path.withoutExtension(rel);
 				var md = File.getContent('$inDir/$rel').replace("\r", "");
 				buf.add('\n' + 'yalAttackData.$name = `$md`;');
