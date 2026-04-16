@@ -15,6 +15,8 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 	public var knownValuesMap:Map<String, WikiLink> = new Map();
 	//
 	public var complexValues:Map<String, LinkColumnComplexValue> = new Map();
+	public var hiddenValues:Map<String, Bool> = new Map();
+	//
 	public function addComplexValue(name:String, values:Array<String>, ?title:String, displayName = "Multi") {
 		var joined = values.join(", ");
 		if (title == null) {
@@ -40,6 +42,9 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 		}
 		if (classNames != null) cv.classNames = classNames;
 		complexValues[name] = cv;
+	}
+	public function hideValue(name:String) {
+		hiddenValues[name] = true;
 	}
 	//
 	public function new(name) {
@@ -67,8 +72,14 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 	}
 	override function buildValue(td:TableCellElement, q:T) {
 		var links = getLinks(q);
-		for (i => link in links) {
-			if (i > 0) td.append(", ");
+		var sep = false;
+		for (link in links) {
+			if (hiddenValues[link.name]) continue;
+			//
+			if (sep) {
+				td.append(", ");
+			} else sep = true;
+			//
 			var complex = complexValues[link.name];
 			if (complex != null) {
 				var abbr = document.createElement("abbr");

@@ -242,6 +242,7 @@
 {
 	"name": "Tanuki",
 	"rarity": "Uncommon",
+	hp: 10,
 	"sizes": ["Small"]
 },
 {

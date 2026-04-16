@@ -24,6 +24,7 @@ abstract WikiLink(WikiLinkImpl) from WikiLinkImpl to WikiLinkImpl {
 @:native("WikiLink")
 class WikiLinkImpl {
 	public var name:String;
+	public var title:String;
 	public var label:String;
 	public var url:String;
 	public var level:Null<Int>;
@@ -60,7 +61,7 @@ class WikiLinkImpl {
 		this.level = level;
 	}
 	public function toElement() {
-		var hasTitle = name != label;
+		var hasTitle = name != label || title != null;
 		var out:Element = if (url != null) {
 			var a = document.createAnchorElement();
 			a.append(label);
@@ -69,7 +70,7 @@ class WikiLinkImpl {
 			a;
 		} else {
 			var span:Element = document.createElement(hasTitle ? "abbr" : "span");
-			if (hasTitle) span.title = name;
+			if (hasTitle) span.title = title ?? name;
 			span.append(label);
 			span;
 		}

@@ -40,7 +40,7 @@ Ghoran: Medium
 Goloma: Medium
 Jotunborn: Large
 Kashrishi: Small
-Poppet: Small
+Poppet: Small, Tiny (Toy @)
 Sarangay: Small (New Moon @), Medium (!New Moon @)
 Shisk: Medium
 Shoony: Small

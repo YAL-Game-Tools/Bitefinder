@@ -61,10 +61,12 @@ class AttackTableParser {
 				}
 				//
 				var traits = WikiLink.parse(item["Traits"]);
+				var hasRanged = false;
 				for (trait in traits) {
 					if (trait.name.startsWith("G:")) {
 						if (trait.name == "G:Crit") {
-							trait.name = "CritSpec";
+							trait.name = trait.label = "CritSpec";
+							trait.title = "Automatically gains critical specialization for its group.";
 							attack.traits.push(trait);
 						} else {
 							var group = trait.name.substr(2);
@@ -72,9 +74,11 @@ class AttackTableParser {
 							attack.weaponGroup = group;
 						}
 					} else {
+						if (trait.name.startsWith("Ranged")) hasRanged = true;
 						attack.traits.push(trait);
 					}
 				}
+				if (hasRanged) attack.traits.push("Ranged");
 				//
 				var selfName = isVersatile ? heritage : ancestry;
 				var feats = WikiLink.parse(item["Requirements"]);
