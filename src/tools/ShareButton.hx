@@ -1,5 +1,4 @@
 package tools;
-
 import js.html.Console;
 import js.Browser;
 import js.Browser.window;
@@ -24,6 +23,7 @@ class ShareButton {
 			};
 		}
 	}
+	// swap b64 symbols for ones that don't have to be URL-encoded:
 	static function toBase64(s:String) {
 		s = window.btoa(s);
 		s = s.replace("+", "-");
@@ -56,15 +56,23 @@ class ShareButton {
 		}
 		return arr;
 	}
-	public static function create(getText:()->String, getURL:(type:String, data:String)->String, ?button:InputElement) {
-		var label = "Share";
-		var labelCopied = "Copied!";
+	public static function createSimple<T>(thing:String,
+		pre:(then:T->Void)->Void,
+		getText:(p:T)->String,
+		?button:InputElement
+	) {
+		var label = "share";
+		var labelCopied = "copied!";
 		if (button == null) {
 			button = Browser.document.createInputElement();
 			button.classList.add("share");
 			button.type = "button";
 			button.value = label;
+		} else {
+			label = button.value;
+			labelCopied = button.dataset.copied ?? labelCopied;
 		}
+		//
 		var revertTimeout:Null<Int> = null;
 		function blink() {
 			if (revertTimeout != null) Browser.window.clearTimeout(revertTimeout);
@@ -73,22 +81,15 @@ class ShareButton {
 				button.value = label;
 			}, 1300);
 		}
+		//
 		button.addEventListener("click", (e) -> {
-			var text = getText();
-			var simple:String = (cast window).encodeURIComponent(text);
-			var base64 = window.btoa(text);
-			var bestType = "e", bestText = simple;
-			if (base64.length < bestText.length) {
-				bestType = "b";
-				bestText = base64;
-			}
-			function fin() {
-				var shareURL = getURL(bestType, bestText);
+			pre((param) -> {
+				var snip = getText(param);
 				function fallback() {
-					window.prompt("Here's your share URL:", shareURL);
+					window.prompt('Here\'s your $thing:', snip);
 				}
 				try {
-					Browser.navigator.clipboard.writeText(shareURL).then((_) -> {
+					Browser.navigator.clipboard.writeText(snip).then((_) -> {
 						blink();
 					}).catchError((x) -> {
 						Console.error("Failed to copy:", x);
@@ -98,24 +99,39 @@ class ShareButton {
 					Console.error("Failed to copy:", x);
 					fallback();
 				}
+			});
+		});
+		return button;
+	}
+	public static function create(getText:()->String, getURL:(type:String, data:String)->String, ?button:InputElement) {
+		return createSimple("share URL", (then) -> {
+			var text = getText();
+			var simple:String = (cast window).encodeURIComponent(text);
+			var base64 = toBase64(text);
+			var bestType = "e", bestText = simple;
+			if (base64.length < bestText.length) {
+				bestType = "b";
+				bestText = base64;
 			}
 			try {
 				StringGZ.compress(text).then((bytes) -> {
-					var bb64 = window.btoa(bytesToBinString(bytes));
+					var bb64 = toBase64(bytesToBinString(bytes));
 					if (bb64.length < bestText.length) {
 						bestType = "c";
 						bestText = bb64;
 					}
-					fin();
+					then({ type: bestType, text: bestText });
 				}).catchError((x) -> {
 					Console.error("Compression error", x);
-					fin();
+					then({ type: bestType, text: bestText });
 				});
 			} catch (x:Dynamic) {
 				Console.error("Compression error", x);
+				then({ type: bestType, text: bestText });
 			}
-		});
-		return button;
+		}, (pair) -> {
+			return getURL(pair.type, pair.text);
+		}, button);
 	}
 }
 

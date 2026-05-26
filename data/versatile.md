@@ -1,7 +1,9 @@
 | Rarity | Heritage | Attack | Damage | Traits | Requirements |
 |     -: |       -: |     -: | :-     | :-     | :-           |
 | Common | Dromaar | Tusk | 1d6ʺP | Finesse | [Tusks](https://2e.aonprd.com/Feats.aspx?ID=4519)¹
-| Uncommon | Ardande | Nectar | 1d4ʺAcid | Ranged 20ft | [Caustic Nectar](https://2e.aonprd.com/Feats.aspx?ID=7612)¹
+| Uncommon | Ardante | Nectar | 1d4ʺAcid | Ranged 20ft+, g:Sicken | [Caustic Nectar](https://2e.aonprd.com/Feats.aspx?ID=7612)¹
+| Uncommon | Ardante | Nectar | 1d4ʺAcid, 1d4ʺAcid Persistent | Ranged 20ft+, g:Sicken | [Caustic Nectar](https://2e.aonprd.com/Feats.aspx?ID=7612)¹ + [Potent Nectar](https://2e.aonprd.com/Feats.aspx?ID=7621)¹⁷
+| Uncommon | Ardante | Nectar | 1d4ʺAcid, 1d4ʺAcid Splash | Ranged 20ft+, g:Sicken | [Caustic Nectar](https://2e.aonprd.com/Feats.aspx?ID=7612)¹ + [Potent Nectar](https://2e.aonprd.com/Feats.aspx?ID=7621)¹⁷
 | Uncommon | Changeling | Claw | 1d4ʺS | Agile, Finesse | [Hag Claws](https://2e.aonprd.com/Feats.aspx?ID=4535)¹
 | Uncommon | Changeling | Claw | 1d6ʺS | Grapple, Cold Iron | [Slag May](https://2e.aonprd.com/Feats.aspx?ID=4533)ᴸ
 | Uncommon | Dragonblood | Claw | 1d4ʺS | Agile, Finesse | [Draconic Aspect](https://2e.aonprd.com/Feats.aspx?ID=5731)¹
