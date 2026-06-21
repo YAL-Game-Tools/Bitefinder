@@ -25,4 +25,7 @@
 | Uncommon | Nephilim | Tail | 1d4ʺB | Agile, Finesse | [Bestial Manifestation](https://2e.aonprd.com/Feats.aspx?ID=4548)¹
 | Uncommon | Nephilim | Tail | 1d4ʺB | Agile, Finesse, Deadly D6 | [BM=Bestial Manifestation](https://2e.aonprd.com/Feats.aspx?ID=4548)¹ + [Brutality](https://2e.aonprd.com/Feats.aspx?ID=7204)⁵
 | Uncommon | Talos | Fist | 1d6ʺB/1d6ʺP/1d6ʺS | Agile, Finesse | [Ferrousoul](https://2e.aonprd.com/Feats.aspx?ID=4324)¹
+| Uncommon | Talos | Fist | 1d6ʺB/1d6ʺP/1d6ʺS | Agile, Finesse, Cold Iron | [Ferrousoul](https://2e.aonprd.com/Feats.aspx?ID=4324)¹ + [Precious Alloys](https://2e.aonprd.com/Feats.aspx?ID=4329)⁵
+| Uncommon | Talos | Fist | 1d6ʺB/1d6ʺP/1d6ʺS | Agile, Finesse, Silver | [Ferrousoul](https://2e.aonprd.com/Feats.aspx?ID=4324)¹ + [Precious Alloys](https://2e.aonprd.com/Feats.aspx?ID=4329)⁵
+| Uncommon | Talos | Fist | 1d6ʺB/1d6ʺP/1d6ʺS | Agile, Finesse, Adamantine | [Ferrousoul](https://2e.aonprd.com/Feats.aspx?ID=4324)¹ + [Precious Alloys](https://2e.aonprd.com/Feats.aspx?ID=4329)¹³
 | Rare | Beastkin | Jaws | 1d4ʺP | Agile, Finesse | -

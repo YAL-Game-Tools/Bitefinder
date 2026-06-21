@@ -103,6 +103,9 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 		modeSelect.appendOption("Any of these", "any");
 		if (isMulti) modeSelect.appendOption("All of these", "all");
 		modeSelect.appendOption("None of these", "none");
+		modeSelect.addEventListener("change", (_) -> {
+			table.updateFilters();
+		});
 		//
 		var valueSelect = document.createSelectElement();
 		valueSelect.appendOption(emptyValue);
