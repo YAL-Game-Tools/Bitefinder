@@ -14,6 +14,7 @@
 | Common | Leshy | Seedpod | 1d4ʺB | Ranged 30ft+, g:Tangle & Bleed | [Seedpod](https://2e.aonprd.com/Feats.aspx?ID=4497)¹ + [Thorned Seedpod](https://2e.aonprd.com/Feats.aspx?ID=4507)⁹
 | Common | Leshy | Spine | 1d6ʺP | Finesse | [Cactus @](https://2e.aonprd.com/Heritages.aspx?ID=263)ᴴ
 | Uncommon | Athamaru | Quills | 1d6ʺP | Agile, Finesse | [Quilled @](https://2e.aonprd.com/Heritages.aspx?ID=287)ᴴ
+| Uncommon | Athamaru | Jaws | 1d8ʺP | - | [Razorsharp Bite](https://2e.aonprd.com/Feats.aspx?ID=8986)¹
 | Uncommon | Catfolk | Teeth | 1d6ʺP | - | [Saber Teeth](https://2e.aonprd.com/Feats.aspx?ID=5548)¹
 | Uncommon | Catfolk | Claw | 1d6ʺS | Agile, Finesse | [Clawed @](https://2e.aonprd.com/Heritages.aspx?ID=313)ᴴ
 | Uncommon | Centaur | Hoof | 1d6ʺB | Finesse | [Ironhoof @](https://2e.aonprd.com/Heritages.aspx?ID=294)ᴴ
@@ -103,7 +104,7 @@
 | Rare | Shisk | Quills | 1d6ʺP | Finesse, g:Knife | [Spine Stabber](https://2e.aonprd.com/Feats.aspx?ID=2834)¹
 | Rare | Sprite | Spark | 1d4ʺSpriteSpark | Ranged 20ft, g:Sling | [Spark](https://2e.aonprd.com/Feats.aspx?ID=2635)¹
 | Rare | Sprite | Spark | 1d4ʺSpriteSpark / SpriteSpark2 | Ranged 30ft, g:Sling | [Spark](https://2e.aonprd.com/Feats.aspx?ID=2635)¹ + [Elemental](https://2e.aonprd.com/Feats.aspx?ID=6870)⁵
-| Rare | Strix | Talon | 1d4ʺS | Agile, Finesse | [Predator @](https://2e.aonprd.com/Heritages.aspx?ID=147)¹
+| Rare | Strix | Talon | 1d4ʺS | Agile, Finesse | [Predator @](https://2e.aonprd.com/Heritages.aspx?ID=147)ᴴ
 | Rare | Surki | Claw | 1d4ʺS / 1d4ʺB | Agile, Finesse | [Breaker @](https://2e.aonprd.com/Heritages.aspx?ID=309)ᴴ
 | Rare | Surki | Claw | 1d6ʺS / B / Force | Razing, Finesse | [Breaker @](https://2e.aonprd.com/Heritages.aspx?ID=309)ᴴ + [Metamorphosis](https://2e.aonprd.com/Feats.aspx?ID=5393)⁹
 | Rare | Yaksha | Tusk | 1d6ʺP | Finesse, Activate | [Howling Aspect](https://2e.aonprd.com/Feats.aspx?ID=6970)¹

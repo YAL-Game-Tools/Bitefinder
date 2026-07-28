@@ -88,13 +88,10 @@ class Table<T:TableValue> {
 				}
 			}
 			if (ok) {
-				item.row.style.display = "";
-				if (even) {
-					item.row.classList.add("visibly-even");
-				} else item.row.classList.remove("visibly-even");
+				item.row.classList.remove("hidden");
 				even = !even;
 				found += 1;
-			} else item.row.style.display = "none";
+			} else item.row.classList.add("hidden");
 		}
 		if (counterElement != null) counterElement.innerText = found + "/" + items.length;
 	}
