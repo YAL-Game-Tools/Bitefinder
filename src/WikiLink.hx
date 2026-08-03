@@ -53,7 +53,7 @@ class WikiLinkImpl {
 			});
 		}
 		//
-		if (!url.contains("://")) {
+		if (url != null && !url.contains("://")) {
 			this.title = url;
 			url = null;
 		}

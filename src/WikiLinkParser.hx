@@ -28,7 +28,7 @@ class WikiLinkParser {
 		req = req.trim();
 		//
 		var someOf = [];
-		req = (cast req).replace(rxSomeOf, function(_, mCount:String, mGroup1:String, mGroup2:String) {
+		req = req.mapRegExp(rxSomeOf, function(_, mCount:String, mGroup1:String, mGroup2:String) {
 			var mGroup = mGroup1 ?? mGroup2;
 			var subLinks = run(mGroup);
 			var link = new WikiLinkMulti(Std.parseInt(mCount), subLinks);

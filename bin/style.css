@@ -80,6 +80,7 @@ body > details, body > details details {
 	}
 	abbr {
 		cursor: help;
+		text-underline-offset: 0.15em;
 	}
 	.rarity {
 		background-color: #531004;

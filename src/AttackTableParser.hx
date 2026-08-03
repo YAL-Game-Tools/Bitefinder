@@ -63,6 +63,21 @@ class AttackTableParser {
 				var traits = WikiLink.parse(item["Traits"]);
 				var hasRanged = false;
 				for (trait in traits) {
+					var note = Attack.traitNoteMap[trait.name];
+					if (note != null) {
+						trait.title = note;
+					} else {
+						for (pair in Attack.traitNoteMatchers) {
+							var mt = pair.regexp.exec(trait.name);
+							if (mt != null) {
+								var note = pair.note;
+								for (i in 1 ... mt.length) {
+									note = note.replace("$" + i, mt[i]);
+								}
+								trait.title = note;
+							}
+						}
+					}
 					if (trait.name.startsWith("G:")) {
 						if (trait.name == "G:Crit") {
 							trait.name = trait.label = "CritSpec";

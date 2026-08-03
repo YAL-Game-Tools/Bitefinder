@@ -38,6 +38,11 @@ class AttackTable extends Table<Attack> {
 		columns.push(damageType);
 		
 		var traits = new MultiLinkColumn("Traits", (a:Attack) -> a.traits);
+		traits.prepareValueForComparison = s -> {
+			if (StringTools.endsWith(s, "*")) {
+				return s.substring(0, s.length - 1);
+			} else return s;
+		};
 		traits.hideValue("Ranged");
 		columns.push(traits);
 		

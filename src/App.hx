@@ -60,6 +60,7 @@ class App {
 		function addAttacks(source:String, isVersatile:Bool) {
 			for (a in AttackTableParser.run(source, isVersatile)) attacks.push(a);
 		}
+		Attack.loadTraitNotes(AutoData.traits);
 		if (pf2e) {
 			loadShared(AutoData.shared);
 			addAttacks(AutoData.heritage, false);

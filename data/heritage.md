@@ -3,8 +3,8 @@
 | Common | Goblin | Jaws | 1d6ʺP | Finesse | [Razortooth @](https://2e.aonprd.com/Heritages.aspx?ID=252)ᴴ
 | Common | Goblin | Jaws | 1d8ʺP | - | [Razortooth @](https://2e.aonprd.com/Heritages.aspx?ID=252)ᴴ + [Fang Sharpener](https://2e.aonprd.com/Feats.aspx?ID=1000)¹
 | Common | Goblin | Jaws | 1d4ʺP | - | [Irongut @](https://2e.aonprd.com/Heritages.aspx?ID=17)ᴴ + [Fang Sharpener](https://2e.aonprd.com/Feats.aspx?ID=1000)¹
-| Common | Goblin | Tail | 1d4ʺB | Trip, g:? | [Tailed @](https://2e.aonprd.com/Heritages.aspx?ID=37)ᴴ
-| Common | Goblin | Tail | 1d6ʺB | Trip, g:? | [Tailed @](https://2e.aonprd.com/Heritages.aspx?ID=37)ᴴ + [Hard Tail](https://2e.aonprd.com/Feats.aspx?ID=1001)¹
+| Common | Goblin | Tail | 1d4ʺB | [Trip*](Reduces the number of hands required to Trip), g:? | [Tailed @](https://2e.aonprd.com/Heritages.aspx?ID=37)ᴴ
+| Common | Goblin | Tail | 1d6ʺB | [Trip*](Reduces the number of hands required to Trip), g:? | [Tailed @](https://2e.aonprd.com/Heritages.aspx?ID=37)ᴴ + [Hard Tail](https://2e.aonprd.com/Feats.aspx?ID=1001)¹
 | Common | Goblin | Spit | 1d6ʺFire | Ranged 30ft, g:? | [Charhide @](https://2e.aonprd.com/Heritages.aspx?ID=250&Redirected=1)ᴴ + [Torch @](https://2e.aonprd.com/Feats.aspx?ID=1005)⁵ + [Scalding Spit](https://2e.aonprd.com/Feats.aspx?ID=1010)⁹
 | Common | Orc | Tusk | 1d6ʺP | Finesse | [Tusks](https://2e.aonprd.com/Feats.aspx?ID=4519)¹
 | Common | Orc | Fist | 1d4ʺP | Agile, Finesse, Shove | [Iron Fists](https://2e.aonprd.com/Feats.aspx?ID=4513)¹
@@ -54,7 +54,7 @@
 | Rare | Anadi | Fangs | 1d6ʺP | Finesse, Grapple, Trip | [Snaring @](https://2e.aonprd.com/Heritages.aspx?ID=158)ᴴ
 | Rare | Automaton | Fist | 1d6ʺB | Agile, Finesse | [Warrior @](https://2e.aonprd.com/Heritages.aspx?ID=187)ᴴ
 | Rare | Automaton | Tail | 1d6ʺB | - | [Powerful Tail](https://2e.aonprd.com/Feats.aspx?ID=9398)¹
-| Rare | Automaton | Tail | 1d6ʺB | Trip | [Powerful](https://2e.aonprd.com/Feats.aspx?ID=9398)¹ + [Lesser<Augmentation](https://2e.aonprd.com/Feats.aspx?ID=3103)⁹
+| Rare | Automaton | Tail | 1d6ʺB | [Trip*](Reduces the number of hands required to Trip) | [Powerful](https://2e.aonprd.com/Feats.aspx?ID=9398)¹ + [Lesser<Augmentation](https://2e.aonprd.com/Feats.aspx?ID=3103)⁹
 | Rare | Automaton | Claw | 1d4ʺS | Agile, Finesse | [@ Armament](https://2e.aonprd.com/Feats.aspx?ID=3090)¹
 | Rare | Automaton | Claw | 1d6ʺS | Agile, Finesse | [AA=@ Armament](https://2e.aonprd.com/Feats.aspx?ID=3090)¹ + [Lesser<Augmentation](https://2e.aonprd.com/Feats.aspx?ID=3103)⁹
 | Rare | Automaton | Pincer | 1d6ʺP | Grapple | [@ Armament](https://2e.aonprd.com/Feats.aspx?ID=3090)¹
@@ -121,7 +121,7 @@
 | Rare | Yaoguai | Surface | 1d8ʺB | Sweep | [Object @](https://2e.aonprd.com/Heritages.aspx?ID=415)ᴴ + [Morphic](https://2e.aonprd.com/Feats.aspx?ID=6991)¹
 | Rare | Yaoguai | Surface | 1d8ʺS | Sweep | [Object @](https://2e.aonprd.com/Heritages.aspx?ID=415)ᴴ + [Morphic](https://2e.aonprd.com/Feats.aspx?ID=6991)¹
 | Rare | Yaoguai | Root | 1d6ʺB | Reach | [Plant @](https://2e.aonprd.com/Heritages.aspx?ID=416)ᴴ + [Morphic](https://2e.aonprd.com/Feats.aspx?ID=6991)¹
-| Rare | Yaoguai | Nectar | 1d4ʺAcid | Ranged 20ft, g:Sicken | [Plant @](https://2e.aonprd.com/Heritages.aspx?ID=416)ᴴ + [Caustic Nectar](https://2e.aonprd.com/Feats.aspx?ID=7612)¹
-| Rare | Yaoguai | Nectar | 1d4ʺAcid, 1d4ʺAcid Persistent | Ranged 20ft, g:Sicken | [Plant @](https://2e.aonprd.com/Heritages.aspx?ID=416)ᴴ + [Caustic Nectar](https://2e.aonprd.com/Feats.aspx?ID=7612)¹ + [Potent Nectar](https://2e.aonprd.com/Feats.aspx?ID=7621)¹⁷
-| Rare | Yaoguai | Nectar | 1d4ʺAcid, 1d4ʺAcid Splash | Ranged 20ft, g:Sicken | [Plant @](https://2e.aonprd.com/Heritages.aspx?ID=416)ᴴ + [Caustic Nectar](https://2e.aonprd.com/Feats.aspx?ID=7612)¹ + [Potent Nectar](https://2e.aonprd.com/Feats.aspx?ID=7621)¹⁷
+| Rare | Yaoguai | Nectar | 1d4ʺAcid | Ranged 20ft+, g:Sicken | [Plant @](https://2e.aonprd.com/Heritages.aspx?ID=416)ᴴ + [Caustic Nectar](https://2e.aonprd.com/Feats.aspx?ID=7612)¹
+| Rare | Yaoguai | Nectar | 1d4ʺAcid, 1d4ʺAcid Persistent | Ranged 20ft+, g:Sicken | [Plant @](https://2e.aonprd.com/Heritages.aspx?ID=416)ᴴ + [Caustic Nectar](https://2e.aonprd.com/Feats.aspx?ID=7612)¹ + [Potent Nectar](https://2e.aonprd.com/Feats.aspx?ID=7621)¹⁷
+| Rare | Yaoguai | Nectar | 1d4ʺAcid, 1d4ʺAcid Splash | Ranged 20ft+, g:Sicken | [Plant @](https://2e.aonprd.com/Heritages.aspx?ID=416)ᴴ + [Caustic Nectar](https://2e.aonprd.com/Feats.aspx?ID=7612)¹ + [Potent Nectar](https://2e.aonprd.com/Feats.aspx?ID=7621)¹⁷
 | Rare | Any | Leaves | 1d6ʺS | Ranged ?ft, g:Dart, Magical | [Fey Influence](https://2e.aonprd.com/Feats.aspx?ID=1239)⁵ + [Fey Ascension](https://2e.aonprd.com/Feats.aspx?ID=4048)⁹

@@ -16,6 +16,7 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 	//
 	public var complexValues:Map<String, LinkColumnComplexValue> = new Map();
 	public var hiddenValues:Map<String, Bool> = new Map();
+	public var prepareValueForComparison:String->String = null;
 	//
 	public function addComplexValue(name:String, values:Array<String>, ?title:String, displayName = "Multi") {
 		var joined = values.join(", ");
@@ -159,6 +160,9 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 		
 		var itemValues = [];
 		for (link in getLinks(item)) link.gatherNames(itemValues);
+		if (prepareValueForComparison != null) {
+			for (i => v in itemValues) itemValues[i] = prepareValueForComparison(v);
+		}
 		for (i in 0 ... itemValues.length) {
 			var complex = complexValues[itemValues[i]];
 			if (complex != null) {
