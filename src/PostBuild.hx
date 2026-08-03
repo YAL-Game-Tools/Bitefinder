@@ -11,6 +11,7 @@ class PostBuild {
 		function compileDataFile(dir) {
 			var buf = new StringBuf();
 			var inDir = "data";
+			buf.add("// " + DateTools.format(Date.now(), "%Y-%m-%d_%H:%M:%S") + "\n");
 			buf.add('window.yalAttackData ??= {};');
 			for (rel in FileSystem.readDirectory(inDir)) {
 				if (Path.extension(rel) != "md") continue;
@@ -18,6 +19,7 @@ class PostBuild {
 				var md = File.getContent('$inDir/$rel').replace("\r", "");
 				buf.add('\n' + 'yalAttackData.$name = `$md`;');
 			}
+			//
 			var jsBytes = Bytes.ofString(buf.toString());
 			var jsBytesBOM = Bytes.alloc(jsBytes.length + 3);
 			for (i => b in [0xEF, 0xBB, 0xBF]) {

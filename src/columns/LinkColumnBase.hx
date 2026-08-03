@@ -157,7 +157,8 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 		var valueNodes = getValueNodes(ctr);
 		var filterValues = [for (node in valueNodes) node.dataset.value];
 		
-		var itemValues = getLinks(item).map((link) -> link.name);
+		var itemValues = [];
+		for (link in getLinks(item)) link.gatherNames(itemValues);
 		for (i in 0 ... itemValues.length) {
 			var complex = complexValues[itemValues[i]];
 			if (complex != null) {

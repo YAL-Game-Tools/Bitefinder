@@ -14,7 +14,7 @@
 | Uncommon | Dragonblood | Jaws | 1d6ʺP | Forceful, Grapple, Deadly D8 | [Draconic>Aspect](https://2e.aonprd.com/Feats.aspx?ID=5731)¹ + [Tenacious>Jaws](https://2e.aonprd.com/Feats.aspx?ID=8081)⁵ + [Deadly>Aspect](https://2e.aonprd.com/Feats.aspx?ID=5736)⁵
 | Uncommon | Dragonblood | Tail | 1d6ʺB | Sweep, Trip | [Draconic Aspect](https://2e.aonprd.com/Feats.aspx?ID=5731)¹
 | Uncommon | Dhampir | Fangs | 1d6ʺP | Grapple | [Fangs](https://2e.aonprd.com/Feats.aspx?ID=5716)¹
-| Uncommon | Ifrit | Magma | 1d4ʺP / 1d4ʺFire | Agile, Finesse | [Lavasoul](https://2e.aonprd.com/Feats.aspx?ID=2555)ᴸ
+| Uncommon | Ifrit | Magma | 1d4ʺP / 1d4ʺFire | Agile, Finesse, g:Burn | [Lavasoul](https://2e.aonprd.com/Feats.aspx?ID=2555)ᴸ 
 | Uncommon | Ganzi | Tail | 1d6ʺP | Sweep | [Smashing Tail](https://2e.aonprd.com/Feats.aspx?ID=2535)¹
 | Uncommon | Ganzi | Tail | 1d6ʺP | Sweep, Trip, Disarm | [Smashing](https://2e.aonprd.com/Feats.aspx?ID=2535)¹ + [Mischievous](https://2e.aonprd.com/Feats.aspx?ID=2544)¹³
 | Uncommon | Hungerseed | Horns | 1d6ʺP | - | -

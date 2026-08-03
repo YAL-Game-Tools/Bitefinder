@@ -1,3 +1,4 @@
+import WikiLink.WikiLinkMulti;
 import js.Browser.document;
 import js.html.Element;
 import js.lib.RegExp;
@@ -5,19 +6,35 @@ using tools.NativeString;
 using StringTools;
 
 class WikiLinkParser {
-	static inline var superscript = "⁰¹²³⁴⁵⁶⁷⁸⁹";
+	static inline var superscriptDigits = "⁰¹²³⁴⁵⁶⁷⁸⁹";
 	static inline function unSuper(c:String) {
-		return superscript.indexOf(c);
+		return superscriptDigits.indexOf(c);
 	}
 	//
-	static var rxSuperDigit = new RegExp('[$superscript]', "g");
+	static var rxSuperDigit = new RegExp('[$superscriptDigits]', "g");
 	static var heritageMark = "ᴴ";
 	static var rxAoN = new RegExp('\\[(.+?)\\]' // -> text
 		+ '\\((.*?)\\)' // -> url
-		+ '([$superscript$heritageMark]*)' // -> flags
+		+ '([$superscriptDigits$heritageMark]*)' // -> flags
+	, "g");
+	static var rxSomeOf = new RegExp('(?:,\\s+)?'
+		+ '(\\d+)\\s+of\\s+'
+		+ '(?:' + [
+			'\\(' + '([^(]+)' + '\\)',
+			'\\{' + '(.+?)' + '\\}',
+		].join("|") + ')'
 	, "g");
 	public static function run(req:String) {
 		req = req.trim();
+		//
+		var someOf = [];
+		req = (cast req).replace(rxSomeOf, function(_, mCount:String, mGroup1:String, mGroup2:String) {
+			var mGroup = mGroup1 ?? mGroup2;
+			var subLinks = run(mGroup);
+			var link = new WikiLinkMulti(Std.parseInt(mCount), subLinks);
+			someOf.push(link);
+			return "";
+		});
 		//
 		var results = [];
 		for (mt in req.matchAll(rxAoN)) {
@@ -47,6 +64,7 @@ class WikiLinkParser {
 				results.push(new WikiLink(term, null, level));
 			}
 		}
+		for (link in someOf) results.push(link);
 		return results;
 	}
 	

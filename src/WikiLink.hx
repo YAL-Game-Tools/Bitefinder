@@ -35,7 +35,7 @@ class WikiLinkImpl {
 	static var rxShorthands = new RegExp("^(.+?)\\s*(<|>|=)\\s*(.+)$");
 	static var rxSelfRef = new RegExp("\\s*@", "g");
 	
-	public function new(name:String, ?url, ?level) {
+	public function new(name:String, ?url:String, ?level) {
 		var label = name;
 		//
 		var mt = rxShorthands.exec(name);
@@ -51,6 +51,11 @@ class WikiLinkImpl {
 			label = name.mapRegExp(rxSelfRef, function(_) {
 				return "";
 			});
+		}
+		//
+		if (!url.contains("://")) {
+			this.title = url;
+			url = null;
 		}
 		//
 		this.name = name;
@@ -84,7 +89,31 @@ class WikiLinkImpl {
 		}
 		return out;
 	}
+	public function gatherNames(out:Array<String>) {
+		out.push(name);
+	}
 	@:keep public function toString() {
 		return 'WikiLink("$name")';
+	}
+}
+@:native("WikiLinkMulti")
+class WikiLinkMulti extends WikiLinkImpl {
+	public var links:Array<WikiLinkImpl>;
+	public function new(n:Int, ?links:Array<WikiLinkImpl>) {
+		super('$n of');
+		this.links = links ?? [];
+	}
+	override function gatherNames(out:Array<String>) {
+		for (link in links) link.gatherNames(out);
+	}
+	override function toElement():Element {
+		var out:Element = document.createSpanElement();
+		out.append(name + " (");
+		for (i => link in links) {
+			if (i > 0) out.append(", ");
+			out.append(link.toElement());
+		}
+		out.append(")");
+		return out;
 	}
 }

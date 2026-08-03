@@ -79,7 +79,13 @@ class AttackTable extends Table<Attack> {
 					? 'https://yal.cc/game-tools/pf2e/bite/'
 					: Browser.location.origin + Browser.location.pathname
 				);
-				return '$base?filters-${type}=$text';
+				var url = '$base?filters-${type}=$text';
+				if (App.sf2e) {
+					if (App.pf2e) {
+						url += '&both';
+					} else url += '&sf2e';
+				}
+				return url;
 			}
 		);
 		rootFilterPicker.appendMixed(" ", shareButton);
