@@ -1,3 +1,4 @@
+package attacks;
 import js.lib.RegExp;
 import js.Browser;
 import js.html.TableRowElement;

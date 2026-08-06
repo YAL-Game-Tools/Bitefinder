@@ -1,3 +1,4 @@
+package attacks;
 import WikiLink;
 import js.lib.RegExp;
 import js.html.Console;
@@ -113,7 +114,7 @@ class AttackTableParser {
 						attack.ancestrySizes.push(size);
 					}
 				} else {
-					var sizes = App.ancestrySizes[ancestry];
+					var sizes = Bitefinder.ancestrySizes[ancestry];
 					if (sizes != null) {
 						for (item in sizes) {
 							var sizeHeritage = item.heritage;

@@ -1,6 +1,6 @@
 --js bin/script.js
 --class-path src
---main App
---macro PostBuild.run()
+--main Bitefinder
+--macro attacks.PostBuild.run()
 -D js-es=6
 --dce full

@@ -2,14 +2,13 @@ import js.Browser;
 import js.html.URLSearchParams;
 import WikiLink;
 import js.lib.RegExp;
-import js.html.Console;
-import haxe.DynamicAccess;
 import js.Browser.document;
+import attacks.*;
 using StringTools;
 using tools.NativeString;
 using tools.HtmlTools;
 
-class App {
+class Bitefinder {
 	public static var attacks:Array<Attack> = [];
 	public static var table:AttackTable;
 	public static var ancestrySizes:Map<String, Array<{size: String, heritage: String, not:Bool }>> = new Map();
@@ -50,12 +49,14 @@ class App {
 	}
 	public static var pf2e = true;
 	public static var sf2e = false;
+	public static var both = false;
 	public static function main() {
 		loadSizes();
 		//
 		var params = new URLSearchParams(Browser.location.search);
-		pf2e = !params.has("sf2e");
-		sf2e = params.has("sf2e") || params.has("both");
+		both = params.has("both");
+		pf2e = both || !params.has("sf2e");
+		sf2e = both || params.has("sf2e");
 		//
 		function addAttacks(source:String, isVersatile:Bool) {
 			for (a in AttackTableParser.run(source, isVersatile)) attacks.push(a);
@@ -65,12 +66,15 @@ class App {
 			loadShared(AutoData.shared);
 			addAttacks(AutoData.heritage, false);
 			addAttacks(AutoData.versatile, true);
+			Browser.document.body.classList.add("pf2e");
 		}
 		if (sf2e) {
 			loadShared(AutoData.shared_sf2e);
 			addAttacks(AutoData.heritage_sf2e, false);
 			addAttacks(AutoData.versatile_sf2e, true);
+			Browser.document.body.classList.add("sf2e");
 		}
+		if (both) Browser.document.body.classList.add("mixed");
 		//Console.log(attacks);
 		table = new AttackTable(
 			document.querySelectorAuto("#table"),

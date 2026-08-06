@@ -1,3 +1,4 @@
+package attacks;
 import tools.ShareButton;
 import js.html.URLSearchParams;
 import js.html.Console;
@@ -85,8 +86,8 @@ class AttackTable extends Table<Attack> {
 					: Browser.location.origin + Browser.location.pathname
 				);
 				var url = '$base?filters-${type}=$text';
-				if (App.sf2e) {
-					if (App.pf2e) {
+				if (Bitefinder.sf2e) {
+					if (Bitefinder.pf2e) {
 						url += '&both';
 					} else url += '&sf2e';
 				}

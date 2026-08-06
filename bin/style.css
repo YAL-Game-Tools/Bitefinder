@@ -110,3 +110,7 @@ body > details, body > details details {
 	padding: 0 0.2em;
 	margin-left: 0.3em;
 }
+/* conditionals */
+body:not(.pf2e)  .pf2e-only { display: none }
+body:not(.sf2e)  .sf2e-only { display: none }
+body:not(.mixed) .mixed-only { display: none }

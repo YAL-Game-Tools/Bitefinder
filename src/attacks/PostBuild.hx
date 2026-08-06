@@ -1,3 +1,4 @@
+package attacks;
 import haxe.io.Bytes;
 import haxe.io.Path;
 import sys.io.File;

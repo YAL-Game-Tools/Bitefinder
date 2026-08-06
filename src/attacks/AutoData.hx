@@ -1,3 +1,5 @@
+package attacks;
+
 @:native("yalAttackData")
 extern class AutoData {
 	public static var heritage:String;
