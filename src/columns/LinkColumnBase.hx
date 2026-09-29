@@ -17,7 +17,12 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 	public var complexValues:Map<String, LinkColumnComplexValue> = new Map();
 	public var hiddenValues:Map<String, Bool> = new Map();
 	public var prepareValueForComparison:String->String = null;
+	public var expandValues:Map<String, Array<String>> = new Map();
 	//
+	public function addExpandValue(name:String, values:Array<String>) {
+		expandValues[name] = values;
+		knownValues.push(name);
+	}
 	public function addComplexValue(name:String, values:Array<String>, ?title:String, displayName = "Multi") {
 		var joined = values.join(", ");
 		if (title == null) {
@@ -119,7 +124,8 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 		valueSelectButton.type = "button";
 		valueSelectButton.value = "Add";
 		valueSelectButton.addEventListener("click", (e) -> {
-			addFilterValue(ctr, table, valueSelect.value);
+			var select = valueSelect.value;
+			addFilterValue(ctr, table, select);
 		});
 		//
 		controlsCtr.appendMixed(modeSelect, " ", valueSelect, " ", valueSelectButton, valueCtr);
@@ -155,8 +161,18 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 		return ctr.querySelectorEls("& > .values > .value");
 	}
 	override function matchesFilter(ctr:Element, table:Table<T>, item:T):Bool {
-		var valueNodes = getValueNodes(ctr);
-		var filterValues = [for (node in valueNodes) node.dataset.value];
+		var filterValues = [];
+		for (node in getValueNodes(ctr)) {
+			var value = node.dataset.value;
+			var exValues = expandValues[value];
+			if (exValues != null) {
+				for (exValue in exValues) {
+					if (knownValuesMap.exists(exValue)) filterValues.push(exValue);
+				}
+			} else {
+				filterValues.push(value);
+			}
+		}
 		
 		var itemValues = [];
 		for (link in getLinks(item)) link.gatherNames(itemValues);

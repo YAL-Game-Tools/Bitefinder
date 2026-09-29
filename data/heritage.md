@@ -103,8 +103,8 @@
 | Rare | Kashrishi | Horn | 1d8ʺP | Finesse, 2 of (Disarm, Grapple, Shove, Trip) | [Xyloshi](https://2e.aonprd.com/Heritages.aspx?ID=215)ᴴ + [PH=Puncturing Horn](https://2e.aonprd.com/Feats.aspx?ID=3967)¹ + [Fighting Horn](https://2e.aonprd.com/Feats.aspx?ID=3971)⁵
 | Rare | Kashrishi | Horn | 1d8ʺP | Finesse, Disarm, Grapple, Shove, Trip | [Xyloshi](https://2e.aonprd.com/Heritages.aspx?ID=215)ᴴ + [PH=Puncturing Horn](https://2e.aonprd.com/Feats.aspx?ID=3967)¹ + [FH=Fighting Horn](https://2e.aonprd.com/Feats.aspx?ID=3971)⁵ + [FH=Fighting Horn](https://2e.aonprd.com/Feats.aspx?ID=3971)⁵
 | Rare | Poppet | Blade | 1d6ʺS / P | g:Sword | [Tsukumogami @](https://2e.aonprd.com/Heritages.aspx?ID=383)ᴴ + [Made for Combat](https://2e.aonprd.com/Feats.aspx?ID=6872)¹
-| Rare | Poppet | Blade | 1d4ʺP | Agile, Finesse, g:Knife | [Tsukumogami @](https://2e.aonprd.com/Heritages.aspx?ID=383)ᴴ + [Made for Combat](https://2e.aonprd.com/Feats.aspx?ID=6872)¹
-| Rare | Poppet | Blade | 1d4ʺB | Grapple, Trip, g:Flail | [Tsukumogami @](https://2e.aonprd.com/Heritages.aspx?ID=383)ᴴ + [Made for Combat](https://2e.aonprd.com/Feats.aspx?ID=6872)¹
+| Rare | Poppet | Spoke | 1d4ʺP | Agile, Finesse, g:Knife | [Tsukumogami @](https://2e.aonprd.com/Heritages.aspx?ID=383)ᴴ + [Made for Combat](https://2e.aonprd.com/Feats.aspx?ID=6872)¹
+| Rare | Poppet | Wrap | 1d4ʺB | Grapple, Trip, g:Flail | [Tsukumogami @](https://2e.aonprd.com/Heritages.aspx?ID=383)ᴴ + [Made for Combat](https://2e.aonprd.com/Feats.aspx?ID=6872)¹
 | Rare | Sarangay | Horn | 1d6ʺP | Shove | -
 | Rare | Sarangay | Horn | 1d8ʺP | Shove, Concussive | [Crown of Bone](https://2e.aonprd.com/Feats.aspx?ID=6913)¹
 | Rare | Shisk | Quills | 1d6ʺP | Finesse, g:Knife | [Spine Stabber](https://2e.aonprd.com/Feats.aspx?ID=2834)¹

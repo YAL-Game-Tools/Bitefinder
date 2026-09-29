@@ -27,7 +27,11 @@ class AttackTable extends Table<Attack> {
 		columns.push(new LinkColumn("Heritage", (a:Attack) -> a.heritage));
 		columns.push(new MultiLinkColumn("Feats", (a:Attack) -> a.feats));
 		//
-		columns.push(new LinkColumn("Attack", (a:Attack) -> a.name));
+		var attack = new LinkColumn("Attack", (a:Attack) -> a.name);
+		attack.addExpandValue("Any Teeth", ["Jaws", "Fangs", "Tusk", "Tusks", "Teeth", "Beak", "Mandible", "Proboscis"]);
+		attack.addExpandValue("Any Claws", ["Claw", "Talon", "Pincer"]);
+		attack.addExpandValue("Any Horns", ["Horn", "Horns", "Antler"]);
+		columns.push(attack);
 		
 		var dieSize = new NumberColumn("Die", (a:Attack) -> a.dieSize);
 		dieSize.fullName = "Die Size";
