@@ -7,7 +7,7 @@
 | Common | Goblin | Tail | 1d6ʺB | [Trip*](Reduces the number of hands required to Trip), g:? | [Tailed @](https://2e.aonprd.com/Heritages.aspx?ID=37)ᴴ + [Hard Tail](https://2e.aonprd.com/Feats.aspx?ID=1001)¹
 | Common | Goblin | Spit | 1d6ʺFire | Ranged 30ft, g:? | [Charhide @](https://2e.aonprd.com/Heritages.aspx?ID=250&Redirected=1)ᴴ + [Torch @](https://2e.aonprd.com/Feats.aspx?ID=1005)⁵ + [Scalding Spit](https://2e.aonprd.com/Feats.aspx?ID=1010)⁹
 | Common | Orc | Tusk | 1d6ʺP | Finesse | [Tusks](https://2e.aonprd.com/Feats.aspx?ID=4519)¹
-| Common | Orc | Fist | 1d4ʺP | Agile, Finesse, Shove | [Iron Fists](https://2e.aonprd.com/Feats.aspx?ID=4513)¹
+| Common | Orc | Fist | 1d4ʺB | Agile, Finesse, Shove | [Iron Fists](https://2e.aonprd.com/Feats.aspx?ID=4513)¹
 | Common | Leshy | Nectar | 1d4ʺAcid | Ranged 20ft, g:Sicken | [Caustic Nectar](https://2e.aonprd.com/Feats.aspx?ID=7612)¹
 | Common | Leshy | Nectar | 1d4ʺAcid, 1d4ʺAcid Persistent | Ranged 20ft, g:Sicken | [Caustic Nectar](https://2e.aonprd.com/Feats.aspx?ID=7612)¹ + [Potent Nectar](https://2e.aonprd.com/Feats.aspx?ID=7621)¹⁷
 | Common | Leshy | Nectar | 1d4ʺAcid, 1d4ʺAcid Splash | Ranged 20ft, g:Sicken | [Caustic Nectar](https://2e.aonprd.com/Feats.aspx?ID=7612)¹ + [Potent Nectar](https://2e.aonprd.com/Feats.aspx?ID=7621)¹⁷
