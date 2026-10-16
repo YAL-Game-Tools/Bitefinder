@@ -9,8 +9,11 @@ import columns.*;
 import table.*;
 using tools.HtmlTools;
 
-class AttackTable extends Table<Attack> {
+class AttackTable extends PersistentTable<Attack> {
 	override function initColumns() {
+		storageKey = "yal.pf2e.bite.filters";
+		basePath = 'https://yal.cc/game-tools/pf2e/bite/';
+		
 		var rarity = new LinkColumn("R", (a:Attack) -> a.rarity);
 		rarity.fullName = "Rarity";
 		rarity.addValueAbbr("Common", "C", ["rarity", "common"]);
@@ -78,82 +81,5 @@ class AttackTable extends Table<Attack> {
 			"Bludgeoning",
 			"Slashing",
 		], "Depending on the cantrip you've chosen, this can be: <values>", "Elemental");
-	}
-	
-	override function build() {
-		super.build();
-		var shareButton = tools.ShareButton.create(
-			() -> Json.stringify(saveFilters()),
-			(type, text) -> {
-				var base = (Browser.location.hostname != "localhost"
-					? 'https://yal.cc/game-tools/pf2e/bite/'
-					: Browser.location.origin + Browser.location.pathname
-				);
-				var url = '$base?filters-${type}=$text';
-				if (Bitefinder.sf2e) {
-					if (Bitefinder.pf2e) {
-						url += '&both';
-					} else url += '&sf2e';
-				}
-				return url;
-			}
-		);
-		rootFilterPicker.appendMixed(" ", shareButton);
-	}
-	
-	static final lsKey = "yal.pf2e.bite.filters";
-	override function afterBuild() {
-		var params = new URLSearchParams(Browser.location.search);
-		var p:String;
-		function then(str) {
-			Console.log("Loading", str);
-			loadFilters(Json.parse(str));
-		}
-		if ((p = params.get("filters-e")) != null) {
-			ShareButton.decode("e", p, then);
-		} else if ((p = params.get("filters-b")) != null) {
-			ShareButton.decode("b", p, then);
-		} else if ((p = params.get("filters-c")) != null) {
-			ShareButton.decode("c", p, then);
-		} else try {
-			var text = window.localStorage.getItem(lsKey);
-			if (text != null && text != "") {
-				var array = Json.parse(text);
-				loadFilters(array);
-			}
-		} catch (e:Dynamic) {
-			Console.error("Load error:", e);
-		}
-		super.afterBuild();
-		canAutoSave = true;
-		window.addEventListener("beforeunload", (_) -> {
-			if (autoSaveTimeout != null) {
-				window.clearTimeout(autoSaveTimeout);
-				autoSave();
-			}
-		});
-	}
-	var canAutoSave = false;
-	var autoSaveTimeout:Null<Int> = null;
-	var freshlySaved:Null<Int> = null;
-	var saveInterval = 5_000;
-	function autoSave() {
-		autoSaveTimeout = null;
-		var filters = saveFilters();
-		window.localStorage.setItem(lsKey, Json.stringify(filters));
-		Console.log('Saved ${filters.length} filter(s)!');
-		freshlySaved = window.setTimeout(() -> {
-			freshlySaved = null;
-		}, saveInterval);
-	}
-	override function updateFilters() {
-		super.updateFilters();
-		if (canAutoSave) {
-			if (freshlySaved == null) {
-				autoSave();
-			} else if (autoSaveTimeout == null) {
-				autoSaveTimeout = window.setTimeout(autoSave, saveInterval);
-			}
-		}
 	}
 }

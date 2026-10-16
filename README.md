@@ -6,5 +6,9 @@ various unarmed attacks granted by ancestries/heritages!
 ## Building
 You'll need [Haxe](https://haxe.org) installed, and then
 ```
-haxe build.hxml
+haxe build-bite.hxml
 ```
+
+<!--
+https://stackoverflow.com/questions/37705553/how-to-export-a-csv-from-google-sheet-api
+-->

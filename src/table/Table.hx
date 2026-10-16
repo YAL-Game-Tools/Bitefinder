@@ -1,5 +1,6 @@
 package table;
 
+import js.html.TableCellElement;
 import js.html.MouseEvent;
 import haxe.DynamicAccess;
 import js.html.Element;
@@ -161,6 +162,9 @@ class Table<T:TableValue> {
 		header.classList.add("header");
 		for (col in columns) if (col.show) {
 			var th = document.createElement("th");
+			if (col.align != null) {
+				th.style.textAlign = col.align;
+			}
 			col.buildHeader(th);
 			col.header = th;
 			if (col.canSort) {
@@ -182,6 +186,7 @@ class Table<T:TableValue> {
 			var tr = attack.row;
 			for (col in columns) if (col.show) {
 				var td = document.createTableCellElement();
+				if (col.align != null) td.align = col.align;
 				col.buildValue(td, attack);
 				tr.append(td);
 			}

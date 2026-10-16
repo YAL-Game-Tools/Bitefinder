@@ -1,0 +1,6 @@
+--js bin/pike/script.js
+--class-path src
+--main Pikefinder
+--macro tools.UpdatePHP.run()
+-D js-es=6
+--dce full

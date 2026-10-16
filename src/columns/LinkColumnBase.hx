@@ -19,6 +19,8 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 	public var prepareValueForComparison:String->String = null;
 	public var expandValues:Map<String, Array<String>> = new Map();
 	//
+	public var valueMultiSep = ", ";
+	//
 	public function addExpandValue(name:String, values:Array<String>) {
 		expandValues[name] = values;
 		knownValues.push(name);
@@ -83,7 +85,7 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 			if (hiddenValues[link.name]) continue;
 			//
 			if (sep) {
-				td.append(", ");
+				td.append(valueMultiSep);
 			} else sep = true;
 			//
 			var complex = complexValues[link.name];

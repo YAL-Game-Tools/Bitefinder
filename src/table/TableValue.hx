@@ -7,6 +7,9 @@ class TableValue {
 	
 	public function new(name) {
 		this.name = name;
+		init();
+	}
+	public function init() {
 		row = js.Browser.document.createTableRowElement();
 	}
 }

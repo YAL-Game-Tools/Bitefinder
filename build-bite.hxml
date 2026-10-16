@@ -1,6 +1,7 @@
---js bin/script.js
+--js bin/bite/script.js
 --class-path src
 --main Bitefinder
 --macro attacks.PostBuild.run()
+--macro tools.UpdatePHP.run()
 -D js-es=6
 --dce full

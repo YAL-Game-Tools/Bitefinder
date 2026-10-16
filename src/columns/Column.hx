@@ -11,6 +11,7 @@ class Column<T:table.TableValue> extends TableFilter<T> {
 	public var canSort = false;
 	public var canFilter = false;
 	public var header:Element;
+	public var align:String = null;
 	override function getFullName():String {
 		return fullName ?? name;
 	}

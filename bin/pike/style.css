@@ -1,0 +1,16 @@
+#table {
+	.category {
+		background-color: #284520;
+		color: white;
+		display: inline-block;
+		padding: 0.1em 0.3em;
+		font-size: 70%;
+		text-decoration: none;
+	}
+	.category.simple {
+		background-color: #757575;
+	}
+	.category.advanced {
+		background-color: #5c3392;
+	}
+}

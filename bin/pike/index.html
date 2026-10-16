@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<meta property="theme-color" content="#FFF037">
+	<link rel="icon" href="https://yal.cc/favicon.ico">
+	<title>Pikefinder?</title>
+	<meta property="og:title" content="Pikefinder" />
+	<meta property="og:description" content="A filterable table of ancestral weapons in PF2e" />
+	<link rel="stylesheet" href="../bite/style.css?v=BUILD_DATE"/>
+	<link rel="stylesheet" href="style.css?v=BUILD_DATE"/>
+	<link rel="stylesheet" href="../bite/night.css?v=BUILD_DATE"/>
+	<script defer="" src="https://cloud.umami.is/script.js" data-website-id="5e27083a-c054-4136-9592-b43ac60a5e84"></script>
+</head><body>
+	<h1 id="title">Pikefinder?</h1>
+	<div id="subtitle">A tool by YellowAfterlife<br>with data entry by Novakidflash</div>
+	<label>
+		<input type="checkbox" id="night"/>
+		Night Mode
+	</label>
+	· <a href="https://yal.cc/game-tools/pf2e/">More PF2e tools</a>
+	<!--<p>
+		Mode: <a href="?">Pathfinder 2e</a>
+		· <a href="?sf2e">Starfinder 2e</a> (WIP)
+		· <a href="?both">Both</a>
+	</p>--><p>
+		This is a filterable table with Pathfinder 2nd Edition's
+		various weapons that can be accessed through the ancestral weapon feats!
+	</p>
+	<details><summary>What's this for?</summary>
+		<ul><li>
+			<a href="https://2e.aonprd.com/Feats.aspx?ID=5979" target="_blank">Monastic Weaponry</a>
+			allows to use ancestral weapons for Monk features, so long as they are Agile or Finesse
+			(<a href="?filters-b=W3siJHR5cGUiOiJUcmFpdHMiLCIkZW5hYmxlIjp0cnVlLCJtb2RlIjoiYW55IiwidmFsdWVzIjpbIkFnaWxlIiwiRmluZXNzZSJdfV0.">filter</a>)
+		</li><li>
+			Some classes don't gain critical specialization,
+			whereas ancestral weapon feats usually offer it at level 5.
+		</li><li>
+			Some classes don't start with martial weapon training,
+			whereas ancestral weapon feats offer familiarity.
+		</li><li>
+			For classes that <i>do</i> start with martial weapon training,
+			you can get yourself an advanced weapon instead!
+			These typically punch slightly above their weight class
+			or have something interesting going on for them.
+		</li></ul>
+	</details>
+	<details><summary>Special cases</summary>
+		<ul><li>
+			<a href="https://2e.aonprd.com/Feats.aspx?ID=4480" target="_blank">Unconventional Weaponry</a>
+			(Human) allows to gain familiarity with weapons from other ancestries
+			or ones that are "common in another culture".
+		</li><li>
+			<a href="https://2e.aonprd.com/Feats.aspx?ID=6899" target="_blank">Samsaran Weapon Memory</a>
+			allows to pick two ancestry-traited weapons.
+		</li></ul>
+	</details>
+	<details><summary>Credits</summary>
+		<ul><li>
+			A tool by YellowAfterlife
+		</li><li>
+			With ancestry➜weapon data entry by Novakidflash
+		</li><li>
+			Written in <a href="https://haxe.org">Haxe</a>!
+		</li><li>
+			<a href="https://github.com/YAL-Game-Tools/Pikefinder">Open-source!</a>
+		</li></ul>
+	</details>
+	<script>(function() {
+		var key = "yal.pf2e.pike.night";
+		var cb = document.getElementById("night");
+		var value = null;
+		try {
+			value = localStorage.getItem(key) == "1";
+		} catch (_) {}
+		if (value == null) {
+			value = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+		}
+		function sync() {
+			if (cb.checked) document.body.classList.add("night"); else document.body.classList.remove("night");
+		}
+		cb.checked = value;
+		cb.onchange = function() {
+			sync();
+			try {
+				localStorage.setItem(key, cb.checked ? "1" : "0");
+			} catch (_) {}
+		};
+		sync();
+	})()</script>
+	<fieldset id="filters"><legend>Filters</legend>
+		
+	</fieldset>
+	<p>
+		Matching attacks: <span id="match-count">?</span>
+		<input type="button" id="reset-order" value="Reset Order" style="display:none"/>
+	</p>
+	<div id="table-wrap">
+		<table id="table"></table>
+	</div>
+	<script src="data-weapons.js?v=BUILD_DATE"></script>
+	<script src="data-tags.js?v=BUILD_DATE"></script>
+	<script src="data-aon.js?v=BUILD_DATE"></script>
+	<script src="../bite/StringGZ.js"></script>
+	<script src="script.js?v=BUILD_DATE"></script>
+</body></html>

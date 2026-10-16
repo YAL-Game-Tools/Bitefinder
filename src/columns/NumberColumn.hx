@@ -12,6 +12,8 @@ using tools.HtmlTools;
 class NumberColumn<T:table.TableValue> extends Column<T> {
 	public var getter:T->Int;
 	public var prefix = "";
+	public var suffix = "";
+	public var hideWhen:Int->Bool = null;
 	public function new(name, getter) {
 		super(name);
 		this.getter = getter;
@@ -22,7 +24,9 @@ class NumberColumn<T:table.TableValue> extends Column<T> {
 		return getter(a) - getter(b);
 	}
 	override function buildValue(td:TableCellElement, q:T) {
-		td.append(prefix + getter(q));
+		var value = getter(q);
+		if (hideWhen != null && hideWhen(value)) return;
+		td.append(prefix + value + suffix);
 	}
 	override function buildFilter(ctr:Element, table:Table<T>) {
 		var opSelect = document.createSelectElement();
