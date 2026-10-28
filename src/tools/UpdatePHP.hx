@@ -12,7 +12,7 @@ class UpdatePHP {
 		Context.onAfterGenerate(() -> {
 			var dir = Path.directory(Compiler.getOutput());
 			var now = Date.now();
-			var nowStr = DateTools.format(Date.now(), "%F");
+			var nowStr = DateTools.format(Date.now(), "%F_%H-%M");
 			var indexHTML = File.getContent(Path.join([dir, "index.html"]));
 			indexHTML = indexHTML.replace("BUILD_DATE", nowStr);
 			File.saveContent(Path.join([dir, "index.php"]), indexHTML);

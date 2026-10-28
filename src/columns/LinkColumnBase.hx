@@ -111,6 +111,7 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 		modeSelect.appendOption("Any of these", "any");
 		if (isMulti) modeSelect.appendOption("All of these", "all");
 		modeSelect.appendOption("None of these", "none");
+		if (isMulti) modeSelect.appendOption("Unless only", "unless");
 		modeSelect.addEventListener("change", (_) -> {
 			table.updateFilters();
 		});
@@ -208,6 +209,13 @@ class LinkColumnBase<T:table.TableValue> extends Column<T> {
 				}
 				return true;
 			}
+			case "unless": {
+				var only = true;
+				for (val in itemValues) {
+					if (val != emptyValue && !filterValues.contains(val)) only = false;
+				}
+				return !only;
+			};
 		}
 		return true;
 	}
