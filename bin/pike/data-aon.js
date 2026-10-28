@@ -1,8 +1,11 @@
-// [...$0.querySelectorAll(`tr td:first-child a`)].map(a => `- [${a.textContent}](${a.href})`).join("\n")
+// these are the weapons that have inconsistent naming between AoN/FVTT
 window.aonTweaks = `
 - [Sickle-saber](https://2e.aonprd.com/Weapons.aspx?ID=240)
 - [Three-peaked Tree](https://2e.aonprd.com/Weapons.aspx?ID=223)
+- [Maul-spade](https://2e.aonprd.com/Weapons.aspx?ID=537)
+- [Dwarven War Axe](https://2e.aonprd.com/Weapons.aspx?ID=420)
 `
+// [...$0.querySelectorAll(`tr td:first-child a`)].map(a => `- [${a.textContent}](${a.href})`).join("\n")
 window.aonLinks = `
 - [Backpack Catapult](https://2e.aonprd.com/Weapons.aspx?ID=174)
 - [Butchering Axe](https://2e.aonprd.com/Weapons.aspx?ID=234)
