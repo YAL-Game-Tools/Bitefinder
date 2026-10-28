@@ -13,4 +13,7 @@ class NativeString {
 	public static inline function mapRegExp(s:String, rx:RegExp, fn:Function) {
 		return (cast s).replaceAll(rx, fn);
 	}
+	public static function capitalize(s:String) {
+		return s.charAt(0).toUpperCase() + s.substring(1);
+	}
 }

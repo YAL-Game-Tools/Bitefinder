@@ -54,7 +54,7 @@ class WikiLinkParser {
 		}
 		if (results.length == 0 && req != "" && req != "-") {
 			for (term in req.split(",").map((s) -> s.trim())) {
-				term = term.charAt(0).toUpperCase() + term.substr(1);
+				term = term.capitalize();
 				var levelStr = "";
 				term = term.mapRegExp(rxSuperDigit, (c) -> {
 					levelStr += unSuper(c);

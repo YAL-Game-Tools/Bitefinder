@@ -41,6 +41,15 @@ class WeaponTable extends PersistentTable<Weapon> {
 		range.hideWhen = i -> i == 0;
 		columns.push(range);
 		//
+		var group = new LinkColumn("Group", wv(w -> {
+			var cc = WikiLink.checkCommon;
+			WikiLink.checkCommon = false;
+			var link = new WikiLink(w.group.capitalize());
+			WikiLink.checkCommon = cc;
+			return link;
+		}));
+		columns.push(group);
+		//
 		var usage = new LinkColumn("H#", wl(w -> w.usage.toShort()));
 		usage.fullName = "Hands/usage";
 		columns.push(usage);

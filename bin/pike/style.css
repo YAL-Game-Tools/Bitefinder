@@ -13,4 +13,7 @@
 	.category.advanced {
 		background-color: #5c3392;
 	}
+	td:last-child, th:last-child {
+		max-width: 250px;
+	}
 }
