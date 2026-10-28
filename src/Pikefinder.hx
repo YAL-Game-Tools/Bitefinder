@@ -43,7 +43,10 @@ class Pikefinder {
 				continue;
 			}
 			if (weaponName == "Any 1 Common Axe or Hammer" ) {
-				for (weapon in rawWeapons) if (weapon.group == Axe || weapon.group == Hammer) {
+				for (weapon in rawWeapons) if (
+					weapon.rarity == Common
+					&& (weapon.group == Axe || weapon.group == Hammer)
+				) {
 					tagAncestry(weapon, ancestry);
 				}
 				continue;

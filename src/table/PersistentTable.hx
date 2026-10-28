@@ -37,6 +37,7 @@ class PersistentTable<T:TableValue> extends Table<T> {
 		function then(str) {
 			Console.log("Loading", str);
 			loadFilters(Json.parse(str));
+			updateFilters();
 		}
 		if ((p = params.get("filters-e")) != null) {
 			ShareButton.decode("e", p, then);
